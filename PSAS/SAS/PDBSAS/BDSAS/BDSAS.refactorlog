@@ -7,4 +7,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="codCidades" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="6541ccea-0b85-4268-8c29-1a84bc449f50" ChangeDateTime="10/16/2014 10:42:22">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="codCidade" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0df7fb8f-3889-4ed6-a62f-82da78280014" ChangeDateTime="10/16/2014 10:46:10">
+    <Property Name="ElementName" Value="[dbo].[Table1].[codCidade]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="codUf" />
+  </Operation>
 </Operations>
