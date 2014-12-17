@@ -1,0 +1,21 @@
+CREATE TABLE cidades (
+  codCidades INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(codCidades)
+);
+
+CREATE TABLE niveisUser (
+  codNiveisUser INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(codNiveisUser)
+);
+
+CREATE TABLE pessoas (
+  codPessoa INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(codPessoa)
+);
+
+CREATE TABLE usuarios (
+  codUsuarios INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(codUsuarios)
+);
+
+
