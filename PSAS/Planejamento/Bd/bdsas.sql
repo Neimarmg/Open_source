@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2014 at 02:08 PM
--- Server version: 5.6.20
+-- Generation Time: 20-Dez-2014 às 18:18
+-- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `acessos`
+-- Estrutura da tabela `acessos`
 --
 
 CREATE TABLE IF NOT EXISTS `acessos` (
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cidades`
+-- Estrutura da tabela `cidades`
 --
 
 CREATE TABLE IF NOT EXISTS `cidades` (
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `cidades` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fornecedores`
+-- Estrutura da tabela `fornecedores`
 --
 
 CREATE TABLE IF NOT EXISTS `fornecedores` (
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `niveisuser`
+-- Estrutura da tabela `niveisuser`
 --
 
 CREATE TABLE IF NOT EXISTS `niveisuser` (
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `niveisuser` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pessoas`
+-- Estrutura da tabela `pessoas`
 --
 
 CREATE TABLE IF NOT EXISTS `pessoas` (
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipofornecedor`
+-- Estrutura da tabela `tipofornecedor`
 --
 
 CREATE TABLE IF NOT EXISTS `tipofornecedor` (
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `tipofornecedor` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipopessoa`
+-- Estrutura da tabela `tipopessoa`
 --
 
 CREATE TABLE IF NOT EXISTS `tipopessoa` (
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `tipopessoa` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipoutilitario`
+-- Estrutura da tabela `tipoutilitario`
 --
 
 CREATE TABLE IF NOT EXISTS `tipoutilitario` (
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `tipoutilitario` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `uf`
+-- Estrutura da tabela `uf`
 --
 
 CREATE TABLE IF NOT EXISTS `uf` (
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `uf` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilitarios`
+-- Estrutura da tabela `utilitarios`
 --
 
 CREATE TABLE IF NOT EXISTS `utilitarios` (
