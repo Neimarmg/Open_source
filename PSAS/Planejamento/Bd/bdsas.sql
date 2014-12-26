@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Dez-2014 às 18:18
--- Versão do servidor: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: 26-Dez-2014 às 23:11
+-- Versão do servidor: 5.5.39
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,7 +37,14 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `acessos`
+--
+
+INSERT INTO `acessos` (`codAcesso`, `codNiveisUser`, `codUsuario`, `usuario`, `senha`, `ativa`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 1, 1, 'MASTER', '123', 'A', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -49,6 +56,62 @@ CREATE TABLE IF NOT EXISTS `cidades` (
 `codCidade` int(10) unsigned NOT NULL,
   `codUf` int(10) unsigned DEFAULT NULL,
   `nome` varchar(200) DEFAULT NULL,
+  `datacreate` datetime DEFAULT NULL,
+  `userCreate` varchar(30) DEFAULT NULL,
+  `dataAlter` datetime DEFAULT NULL,
+  `userAlter` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `contatos`
+--
+
+CREATE TABLE IF NOT EXISTS `contatos` (
+`codContatos` int(10) unsigned NOT NULL,
+  `codPessoa` int(10) unsigned DEFAULT NULL,
+  `codFornecedor` int(11) DEFAULT NULL,
+  `codTipo` int(10) unsigned DEFAULT NULL,
+  `codOperadora` int(10) unsigned DEFAULT NULL,
+  `foneConvencional` varchar(12) DEFAULT NULL,
+  `celular` int(12) unsigned DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `obs` text,
+  `datacreate` datetime DEFAULT NULL,
+  `userCreate` varchar(30) DEFAULT NULL,
+  `dataAlter` datetime DEFAULT NULL,
+  `userAlter` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cursos`
+--
+
+CREATE TABLE IF NOT EXISTS `cursos` (
+`codCurso` int(10) unsigned NOT NULL,
+  `nome` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `enderecos`
+--
+
+CREATE TABLE IF NOT EXISTS `enderecos` (
+`codEndereco` int(10) unsigned NOT NULL,
+  `codPessoa` int(10) unsigned NOT NULL,
+  `codFornecedor` int(10) unsigned DEFAULT NULL,
+  `codTipo` int(10) unsigned DEFAULT NULL,
+  `rua` varchar(200) DEFAULT NULL,
+  `nro` int(10) unsigned DEFAULT NULL,
+  `compl` varchar(20) DEFAULT NULL,
+  `bairro` varchar(50) DEFAULT NULL,
+  `codCidade` int(10) unsigned DEFAULT NULL,
+  `cep` varchar(11) DEFAULT NULL,
   `datacreate` datetime DEFAULT NULL,
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
@@ -76,6 +139,16 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `matriculas`
+--
+
+CREATE TABLE IF NOT EXISTS `matriculas` (
+`codMatricula` int(10) unsigned NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `niveisuser`
 --
 
@@ -86,7 +159,19 @@ CREATE TABLE IF NOT EXISTS `niveisuser` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Extraindo dados da tabela `niveisuser`
+--
+
+INSERT INTO `niveisuser` (`codNiveisUser`, `descricao`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 'ADMISTRADOR MASTER', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(2, 'MESTRE', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(3, 'DIREÇÃO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(4, 'USUÁRIO COMUM', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(6, 'PÚBLICO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(7, 'CORDENADORES', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -134,7 +219,16 @@ CREATE TABLE IF NOT EXISTS `tipopessoa` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlater` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `tipopessoa`
+--
+
+INSERT INTO `tipopessoa` (`codTipoPessoa`, `descricao`, `dataCreate`, `userCreate`, `dataAlater`, `userAlter`) VALUES
+(1, 'ALUNO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(2, 'FORNECEDOR', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(3, 'FUNCIONÁRIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -149,6 +243,25 @@ CREATE TABLE IF NOT EXISTS `tipoutilitario` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `tipoutilitario`
+--
+
+INSERT INTO `tipoutilitario` (`codTipoUtilitario`, `descricao`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 'OPERADORAS', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(2, 'CONTATOS', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(3, 'TIPO ENDEREÇO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `turmas`
+--
+
+CREATE TABLE IF NOT EXISTS `turmas` (
+`codTurma` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -178,11 +291,19 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 `codUsuario` int(10) unsigned NOT NULL,
   `codPessoa` int(10) unsigned DEFAULT NULL,
   `codNivel` int(10) unsigned DEFAULT NULL,
+  `usuario` varchar(25) DEFAULT NULL,
   `datacreate` datetime DEFAULT NULL,
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`codUsuario`, `codPessoa`, `codNivel`, `usuario`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 0, 1, 'MASTER', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -198,7 +319,34 @@ CREATE TABLE IF NOT EXISTS `utilitarios` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+
+--
+-- Extraindo dados da tabela `utilitarios`
+--
+
+INSERT INTO `utilitarios` (`codUtilitario`, `codTipoUtilitario`, `descricao`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 1, 'CLARO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(2, 1, 'VIVO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(3, 1, 'TIM', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(4, 1, 'OI', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(5, 1, 'TIM', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(6, 2, 'RESIDENCIAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(7, 2, 'PESSOAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(8, 2, 'COMERCIAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(10, 2, 'TRABALHO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(11, 2, 'TEMPORÁRIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(13, 2, 'CASA DOS AVOS', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(14, 2, 'CASA DO PAI', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(15, 2, 'CASA DA MÃE', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(16, 2, 'COLÉGIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(17, 2, 'MOSTEIRO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(18, 2, 'ALBERGUE', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(19, 2, 'CONVENTO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(20, 3, 'DOMICILHAR', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(21, 3, 'EMPREGO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(22, 3, 'PRAIA', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(23, 3, 'COMERCIAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
 
 --
 -- Indexes for dumped tables
@@ -208,13 +356,31 @@ CREATE TABLE IF NOT EXISTS `utilitarios` (
 -- Indexes for table `acessos`
 --
 ALTER TABLE `acessos`
- ADD PRIMARY KEY (`codAcesso`), ADD KEY `codUsuario` (`codUsuario`), ADD KEY `codNiveisUser` (`codNiveisUser`);
+ ADD PRIMARY KEY (`codAcesso`), ADD KEY `codUsuario` (`codUsuario`), ADD KEY `codNiveisUser` (`codNiveisUser`), ADD KEY `codAcesso` (`codAcesso`), ADD KEY `codNiveisUser_2` (`codNiveisUser`), ADD KEY `codUsuario_2` (`codUsuario`), ADD KEY `codNiveisUser_3` (`codNiveisUser`);
 
 --
 -- Indexes for table `cidades`
 --
 ALTER TABLE `cidades`
- ADD PRIMARY KEY (`codCidade`), ADD KEY `codUf` (`codUf`);
+ ADD PRIMARY KEY (`codCidade`), ADD KEY `codUf` (`codUf`), ADD KEY `codUf_2` (`codUf`), ADD KEY `codCidade` (`codCidade`,`codUf`);
+
+--
+-- Indexes for table `contatos`
+--
+ALTER TABLE `contatos`
+ ADD PRIMARY KEY (`codContatos`), ADD KEY `codPessoa` (`codPessoa`), ADD KEY `codContatos` (`codContatos`), ADD KEY `codTipo` (`codTipo`), ADD KEY `codFornecedor` (`codFornecedor`), ADD KEY `codContatos_2` (`codContatos`,`codPessoa`,`codTipo`,`codOperadora`,`codFornecedor`);
+
+--
+-- Indexes for table `cursos`
+--
+ALTER TABLE `cursos`
+ ADD PRIMARY KEY (`codCurso`);
+
+--
+-- Indexes for table `enderecos`
+--
+ALTER TABLE `enderecos`
+ ADD PRIMARY KEY (`codEndereco`), ADD KEY `codEndereco` (`codEndereco`,`codTipo`,`codCidade`), ADD KEY `codPessoa` (`codPessoa`);
 
 --
 -- Indexes for table `fornecedores`
@@ -223,10 +389,16 @@ ALTER TABLE `fornecedores`
  ADD PRIMARY KEY (`codFornecedores`), ADD KEY `codTipoFornecedor` (`codTipoFornecedor`), ADD KEY `codPessoa` (`codPessoa`), ADD KEY `codTipo` (`codTipo`);
 
 --
+-- Indexes for table `matriculas`
+--
+ALTER TABLE `matriculas`
+ ADD PRIMARY KEY (`codMatricula`);
+
+--
 -- Indexes for table `niveisuser`
 --
 ALTER TABLE `niveisuser`
- ADD PRIMARY KEY (`codNiveisUser`);
+ ADD PRIMARY KEY (`codNiveisUser`), ADD KEY `codNiveisUser` (`codNiveisUser`);
 
 --
 -- Indexes for table `pessoas`
@@ -238,7 +410,7 @@ ALTER TABLE `pessoas`
 -- Indexes for table `tipofornecedor`
 --
 ALTER TABLE `tipofornecedor`
- ADD PRIMARY KEY (`codTipoFornecedor`);
+ ADD PRIMARY KEY (`codTipoFornecedor`), ADD KEY `codTipoFornecedor` (`codTipoFornecedor`);
 
 --
 -- Indexes for table `tipopessoa`
@@ -250,25 +422,31 @@ ALTER TABLE `tipopessoa`
 -- Indexes for table `tipoutilitario`
 --
 ALTER TABLE `tipoutilitario`
- ADD PRIMARY KEY (`codTipoUtilitario`);
+ ADD PRIMARY KEY (`codTipoUtilitario`), ADD KEY `codTipoUtilitario` (`codTipoUtilitario`);
+
+--
+-- Indexes for table `turmas`
+--
+ALTER TABLE `turmas`
+ ADD PRIMARY KEY (`codTurma`);
 
 --
 -- Indexes for table `uf`
 --
 ALTER TABLE `uf`
- ADD PRIMARY KEY (`codUf`), ADD KEY `uf` (`uf`);
+ ADD PRIMARY KEY (`codUf`), ADD KEY `uf` (`uf`), ADD KEY `codUf` (`codUf`);
 
 --
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
- ADD PRIMARY KEY (`codUsuario`), ADD UNIQUE KEY `codPessoa` (`codPessoa`), ADD KEY `codPessoa_2` (`codPessoa`), ADD KEY `codPessoa_3` (`codPessoa`), ADD KEY `codNivel` (`codNivel`);
+ ADD PRIMARY KEY (`codUsuario`);
 
 --
 -- Indexes for table `utilitarios`
 --
 ALTER TABLE `utilitarios`
- ADD PRIMARY KEY (`codUtilitario`), ADD KEY `codTipoUtilitario` (`codTipoUtilitario`);
+ ADD PRIMARY KEY (`codUtilitario`), ADD KEY `codTipoUtilitario` (`codTipoUtilitario`), ADD KEY `codUtilitario` (`codUtilitario`,`codTipoUtilitario`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -278,22 +456,42 @@ ALTER TABLE `utilitarios`
 -- AUTO_INCREMENT for table `acessos`
 --
 ALTER TABLE `acessos`
-MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `cidades`
 --
 ALTER TABLE `cidades`
 MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `contatos`
+--
+ALTER TABLE `contatos`
+MODIFY `codContatos` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `cursos`
+--
+ALTER TABLE `cursos`
+MODIFY `codCurso` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `enderecos`
+--
+ALTER TABLE `enderecos`
+MODIFY `codEndereco` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `fornecedores`
 --
 ALTER TABLE `fornecedores`
 MODIFY `codFornecedores` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `matriculas`
+--
+ALTER TABLE `matriculas`
+MODIFY `codMatricula` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `niveisuser`
 --
 ALTER TABLE `niveisuser`
-MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `pessoas`
 --
@@ -308,12 +506,17 @@ MODIFY `codTipoFornecedor` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tipopessoa`
 --
 ALTER TABLE `tipopessoa`
-MODIFY `codTipoPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codTipoPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tipoutilitario`
 --
 ALTER TABLE `tipoutilitario`
-MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `turmas`
+--
+ALTER TABLE `turmas`
+MODIFY `codTurma` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `uf`
 --
@@ -323,12 +526,12 @@ MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `utilitarios`
 --
 ALTER TABLE `utilitarios`
-MODIFY `codUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
