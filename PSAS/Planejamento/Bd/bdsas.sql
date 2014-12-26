@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Dez-2014 às 23:11
+-- Generation Time: 26-Dez-2014 às 23:53
 -- Versão do servidor: 5.5.39
 -- PHP Version: 5.4.31
 
@@ -356,19 +356,19 @@ INSERT INTO `utilitarios` (`codUtilitario`, `codTipoUtilitario`, `descricao`, `d
 -- Indexes for table `acessos`
 --
 ALTER TABLE `acessos`
- ADD PRIMARY KEY (`codAcesso`), ADD KEY `codUsuario` (`codUsuario`), ADD KEY `codNiveisUser` (`codNiveisUser`), ADD KEY `codAcesso` (`codAcesso`), ADD KEY `codNiveisUser_2` (`codNiveisUser`), ADD KEY `codUsuario_2` (`codUsuario`), ADD KEY `codNiveisUser_3` (`codNiveisUser`);
+ ADD KEY `codAcesso` (`codAcesso`), ADD KEY `codNiveisUser` (`codNiveisUser`), ADD KEY `codUsuario` (`codUsuario`);
 
 --
 -- Indexes for table `cidades`
 --
 ALTER TABLE `cidades`
- ADD PRIMARY KEY (`codCidade`), ADD KEY `codUf` (`codUf`), ADD KEY `codUf_2` (`codUf`), ADD KEY `codCidade` (`codCidade`,`codUf`);
+ ADD PRIMARY KEY (`codCidade`), ADD KEY `codUf` (`codUf`), ADD KEY `codCidade` (`codCidade`,`codUf`);
 
 --
 -- Indexes for table `contatos`
 --
 ALTER TABLE `contatos`
- ADD PRIMARY KEY (`codContatos`), ADD KEY `codPessoa` (`codPessoa`), ADD KEY `codContatos` (`codContatos`), ADD KEY `codTipo` (`codTipo`), ADD KEY `codFornecedor` (`codFornecedor`), ADD KEY `codContatos_2` (`codContatos`,`codPessoa`,`codTipo`,`codOperadora`,`codFornecedor`);
+ ADD PRIMARY KEY (`codContatos`), ADD KEY `codPessoa` (`codPessoa`), ADD KEY `codContatos` (`codContatos`), ADD KEY `codTipo` (`codTipo`), ADD KEY `codFornecedor` (`codFornecedor`);
 
 --
 -- Indexes for table `cursos`
@@ -380,7 +380,7 @@ ALTER TABLE `cursos`
 -- Indexes for table `enderecos`
 --
 ALTER TABLE `enderecos`
- ADD PRIMARY KEY (`codEndereco`), ADD KEY `codEndereco` (`codEndereco`,`codTipo`,`codCidade`), ADD KEY `codPessoa` (`codPessoa`);
+ ADD PRIMARY KEY (`codEndereco`), ADD KEY `codPessoa` (`codPessoa`), ADD KEY `codFornecedor` (`codFornecedor`), ADD KEY `codTipo` (`codTipo`), ADD KEY `codCidade` (`codCidade`);
 
 --
 -- Indexes for table `fornecedores`
@@ -434,13 +434,13 @@ ALTER TABLE `turmas`
 -- Indexes for table `uf`
 --
 ALTER TABLE `uf`
- ADD PRIMARY KEY (`codUf`), ADD KEY `uf` (`uf`), ADD KEY `codUf` (`codUf`);
+ ADD PRIMARY KEY (`codUf`), ADD KEY `codUf` (`codUf`);
 
 --
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
- ADD PRIMARY KEY (`codUsuario`);
+ ADD PRIMARY KEY (`codUsuario`), ADD KEY `codPessoa` (`codPessoa`), ADD KEY `codNivel` (`codNivel`);
 
 --
 -- Indexes for table `utilitarios`
