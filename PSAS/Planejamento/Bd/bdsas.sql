@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Dez-2014 às 23:53
--- Versão do servidor: 5.5.39
--- PHP Version: 5.4.31
+-- Generation Time: 27-Dez-2014 às 22:42
+-- Versão do servidor: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
 --
 
 INSERT INTO `acessos` (`codAcesso`, `codNiveisUser`, `codUsuario`, `usuario`, `senha`, `ativa`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 1, 1, 'MASTER', '123', 'A', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (1, 1, 1, 'MASTER', '123', 'A', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
@@ -219,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `tipopessoa` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlater` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Extraindo dados da tabela `tipopessoa`
@@ -228,7 +229,12 @@ CREATE TABLE IF NOT EXISTS `tipopessoa` (
 INSERT INTO `tipopessoa` (`codTipoPessoa`, `descricao`, `dataCreate`, `userCreate`, `dataAlater`, `userAlter`) VALUES
 (1, 'ALUNO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (2, 'FORNECEDOR', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
-(3, 'FUNCIONÁRIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
+(3, 'FUNCIONÁRIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(4, 'PROFESSOR', '2014-12-27 00:00:00', 'MASTER', '2014-12-27 00:00:00', 'MASTER'),
+(5, 'MUNITOR', '2014-12-27 00:00:00', 'MASTER', '2014-12-27 00:00:00', 'MASTER'),
+(6, 'VOLUNTÁRIO', '2014-12-27 00:00:00', 'MASTER', '2014-12-27 00:00:00', 'MASTER'),
+(7, 'ARTISTA', '2014-12-27 00:00:00', 'MASTER', '2014-12-27 00:00:00', 'MASTER'),
+(8, 'CATEQUISTA', '2014-12-27 00:00:00', 'MASTER', '2014-12-27 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -331,12 +337,12 @@ INSERT INTO `utilitarios` (`codUtilitario`, `codTipoUtilitario`, `descricao`, `d
 (3, 1, 'TIM', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (4, 1, 'OI', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (5, 1, 'TIM', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
-(6, 2, 'RESIDENCIAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(6, 2, 'RESÍDENCIAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (7, 2, 'PESSOAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (8, 2, 'COMERCIAL', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (10, 2, 'TRABALHO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (11, 2, 'TEMPORÁRIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
-(13, 2, 'CASA DOS AVOS', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(13, 2, 'CASA DOS AVÓS', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (14, 2, 'CASA DO PAI', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (15, 2, 'CASA DA MÃE', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (16, 2, 'COLÉGIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
@@ -506,7 +512,7 @@ MODIFY `codTipoFornecedor` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tipopessoa`
 --
 ALTER TABLE `tipopessoa`
-MODIFY `codTipoPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `codTipoPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tipoutilitario`
 --
