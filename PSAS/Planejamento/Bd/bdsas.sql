@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Dez-2014 às 22:42
--- Versão do servidor: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: 30-Dez-2014 às 11:44
+-- Versão do servidor: 5.5.39
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `acessos`
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
 
 INSERT INTO `acessos` (`codAcesso`, `codNiveisUser`, `codUsuario`, `usuario`, `senha`, `ativa`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
 (1, 1, 1, 'MASTER', '123', 'A', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
-(1, 1, 1, 'MASTER', '123', 'A', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
+(2, 1, 1, 'MESTRE', '123', 'A', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -362,7 +362,7 @@ INSERT INTO `utilitarios` (`codUtilitario`, `codTipoUtilitario`, `descricao`, `d
 -- Indexes for table `acessos`
 --
 ALTER TABLE `acessos`
- ADD KEY `codAcesso` (`codAcesso`), ADD KEY `codNiveisUser` (`codNiveisUser`), ADD KEY `codUsuario` (`codUsuario`);
+ ADD PRIMARY KEY (`codAcesso`), ADD KEY `codAcesso` (`codAcesso`), ADD KEY `codNiveisUser` (`codNiveisUser`), ADD KEY `codUsuario` (`codUsuario`);
 
 --
 -- Indexes for table `cidades`
@@ -462,7 +462,7 @@ ALTER TABLE `utilitarios`
 -- AUTO_INCREMENT for table `acessos`
 --
 ALTER TABLE `acessos`
-MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `cidades`
 --
