@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Dez-2014 às 11:44
--- Versão do servidor: 5.5.39
--- PHP Version: 5.4.31
+-- Generation Time: 11-Jan-2015 às 12:33
+-- Versão do servidor: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -280,12 +280,43 @@ CREATE TABLE IF NOT EXISTS `uf` (
 `codUf` int(10) unsigned NOT NULL,
   `uf` varchar(5) DEFAULT NULL,
   `estado` varchar(200) DEFAULT NULL,
-  `brasil` varchar(50) DEFAULT NULL,
+  `pais` varchar(50) DEFAULT NULL,
   `datacreate` datetime DEFAULT NULL,
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+
+--
+-- Extraindo dados da tabela `uf`
+--
+
+INSERT INTO `uf` (`codUf`, `uf`, `estado`, `pais`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 'AL', 'ALOGOAS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(2, 'AP', 'AMAPÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(3, 'AM', 'AMAZONAS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(5, 'CA', 'CEARÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(6, 'DF', 'DISTRITO FEDERAL', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(7, 'ES', 'ESPÍRITO SANTO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(8, 'GO', 'GOIÁS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(9, 'MA', 'MARANHÃO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(10, 'MT', 'MATO GROSSO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(11, 'MS', 'MATO GROSSO DO SUL', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(12, 'MG', 'MINAS GERAIS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(13, 'PA', 'PARÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(14, 'PB', 'PARAÍBA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(15, 'PR', 'PARANÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(16, 'PE', 'PERNAMBUCO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(17, 'PI', 'PIAUÍ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(18, 'RJ', 'RIO DE JANEIRO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(19, 'RN', 'RIO GRANDE DO NORTE', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(20, 'RS', 'RIO GRANDE DO SUL', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(21, 'RO', 'RONDÔNIA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(22, 'RR', 'RORAIMA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(23, 'SC', 'SANTA CATARINA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(24, 'SP', 'SÃO PAULO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(25, 'SE', 'SERGIPE', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(26, 'TO', 'TOCANTINS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -527,7 +558,7 @@ MODIFY `codTurma` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `uf`
 --
 ALTER TABLE `uf`
-MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
