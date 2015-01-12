@@ -7,8 +7,8 @@
 <head>
 	<title>Tela de loguin de usuário</title>
 	<meta charset="ISO-8859-1">
-	<style type="text/css"> @import "../css/global.css" </style>
-	<style type="text/css"> @import "../css/fontes.css" </style>
+	<style type="text/css"> @import "../css/global/global.css" </style>
+	<style type="text/css"> @import "../css/global/fontes.css" </style>
 	<style type="text/css"> @import "../css/login.css" </style>
 
 </head>
@@ -19,14 +19,14 @@
 			
 			<form action="autenticar.php" method="post">
 				
-				<label class="label" for="usuario">Usuário:</label> 
-				<input class="user" name="usuario" id="usuario" type="usuario" required/> 
+				<label for="usuario">Usuário:</label> 
+				<input id="usuario" type="txt" required/> 
 				
 				<br/> 
 				<br/> 
 				
-				<label class="label" for="senha">Senha:</label> 
-				 <input class="pas" name="senha" id="senha" type="password" required/>
+				<label for="senha">Senha:</label> 
+				<input name="senha" id="senha" type="password" required/>
 				
 				<br/> 
 				

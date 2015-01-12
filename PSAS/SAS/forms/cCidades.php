@@ -1,29 +1,58 @@
 <!DOCTYPE HTML>
 <?php
-	//require_once 'class/conexao.php';
+	require_once '../class/conexao.php';
 ?>
 
 <html>
 <head>
 	<title>Cadastro de cidades</title>
 	<meta charset="ISO-8859-1">
-	<style type="text/css"> @import "../css/global.css" </style>
-	<style type="text/css"> @import "../css/login.css" </style>
+	<style type="text/css"> @import "../css/global/global.css" </style>
+	<style type="text/css"> @import "../css/global/fontes.css" </style>
+	<style type="text/css"> @import "../css/global/auxiliar.css" </style>
 	
 </head>
 
 <body>
 	<main>
-		<section id='login'>
+		<section id='cCidades'>
+			<h1>Cadastro de cidades</h1>
+			<br/> 
+			<br/> 
+			<form method="post" action="?go=Novo">
+				
+				<br/> 
+				<br/> 
+				
+				<label for="Nome">Nome:</label> 
+				<input  name="nome" id="nome" type="text" required/> 				
+				
+				<br/> 
+				<br/> 					
+				
+				<label for="">Unidade federativa:</label> 
+				<select name="codUf" id="codUf" type="checkbox" required>
+					<option value="0">...</option>
+					<?php 						
+						$sql = "select codUf, uf, estado from uf order by uf"; 
+						$result = mysql_query($sql);
+						while ($fila = mysql_fetch_row($result)) {
+							echo "<option value=".$fila['0'].">".$fila['1']." - ".$fila['2']."</option>";
+						}
+					?>
+				</select>	
+						
+				<br/> 
+				<br/> 					
+				
+				<input class="button" type="submit" value="Novo" id="cCidade" />
+				<input class="button" type="submit" value="Editar" id="cCidade1" />
+				<input class="button" type="submit" value="Apagar" id="cCidade2" />
+				<input class="button" type="submit" value="Salvar" id="cCidade3" />
 			
-			<form action="sss" method="post">
-				
-	
-				
 			</form>
-		
-		</section>
-	
+					
+		</section>	
 	</main>
 	<footer>
 		

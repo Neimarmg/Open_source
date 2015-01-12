@@ -9,7 +9,7 @@
 	$conexao = @mysql_connect($sevidor,$usuario,$senha) or die ("Erro ao conectar com o servidor");
 	
 	if ($sql =  mysql_selectdb($bd, $conexao)) {
-		echo "Conexão estabelecida com sucesso";
+		//echo "Conexão estabelecida com sucesso";
 	} else {
 		echo "Erro a conectar com banco";
 	}

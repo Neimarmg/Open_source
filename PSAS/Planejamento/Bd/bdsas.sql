@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Jan-2015 às 12:33
+-- Generation Time: 11-Jan-2015 às 23:10
 -- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -61,7 +61,15 @@ CREATE TABLE IF NOT EXISTS `cidades` (
   `userCreate` varchar(30) DEFAULT NULL,
   `dataAlter` datetime DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `cidades`
+--
+
+INSERT INTO `cidades` (`codCidade`, `codUf`, `nome`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 20, 'PORTO ALEGRE', '2015-01-11 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(2, 20, 'CANOAS', '2015-01-11 00:00:00', 'MASTES', '2015-01-11 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -498,7 +506,7 @@ MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `cidades`
 --
 ALTER TABLE `cidades`
-MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `contatos`
 --

@@ -1,5 +1,8 @@
 "PSAS/SAS/css/global.css"@CHARSET "ISO-8859-1";
 
+/*1ª a ser chamando 
+Css  global de definidor de padrões globais para o sistema a personalização deve ser feita no css de cada pagina
+neste css deve-se apenas definir estilos genéricos*/
 
 body {
 	background-color: #ff80ff;
@@ -20,7 +23,7 @@ input{
 }
 
 select{	
-	Width:100%;
+	Width:98%;
 	height:40px;
 	border:none;
 	border-redius:5px;
