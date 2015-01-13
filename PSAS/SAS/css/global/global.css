@@ -8,6 +8,10 @@ body {
 	background-color: #ff80ff;
 }
 
+h1{
+	font-variant: center;
+}
+
 footer {
 	width: 100%;
 	height: 60px;
@@ -34,6 +38,7 @@ select{
 	Width:21%;
 	height:70px;
 	font-weight:bolder;
+	border:1p solid:#ccc;
 	font-size:20px
 }
 

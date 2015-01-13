@@ -14,21 +14,20 @@
 </head>
 
 <body>
+	
 	<main>
 		<section id='cCidades'>
 			<h1>Cadastro de cidades</h1>
-			<br/> 
-			<br/> 
+			 
+			
 			<form method="post" action="?go=Novo">
 				
-				<br/> 
-				<br/> 
+				<br/> <br/> 
 				
 				<label for="Nome">Nome da cidade:</label> 
 				<input  name="nome" id="nome" type="text" required/> 				
 				
-				<br/> 
-				<br/> 					
+				<br/> <br/> <br/> 
 				
 				<label for="">Unidade federativa:</label> 
 				<select name="codUf" id="codUf" type="checkbox" required>
@@ -43,8 +42,7 @@
 				</select>	
 						
 				<br/> 
-				<br/> 					
-				
+					
 				<input class="button" type="submit" value="Novo" id="cCidade" />
 				<input class="button" type="submit" value="Editar" id="cCidade" />
 				<input class="button" type="submit" value="Apagar" id="cCidade" />
@@ -54,6 +52,7 @@
 					
 		</section>	
 	</main>
+</a > 
 	<footer>
 		
 	</footer>
