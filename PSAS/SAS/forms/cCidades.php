@@ -24,7 +24,7 @@
 				<br/> 
 				<br/> 
 				
-				<label for="Nome">Nome:</label> 
+				<label for="Nome">Nome da cidade:</label> 
 				<input  name="nome" id="nome" type="text" required/> 				
 				
 				<br/> 
@@ -46,9 +46,9 @@
 				<br/> 					
 				
 				<input class="button" type="submit" value="Novo" id="cCidade" />
-				<input class="button" type="submit" value="Editar" id="cCidade1" />
-				<input class="button" type="submit" value="Apagar" id="cCidade2" />
-				<input class="button" type="submit" value="Salvar" id="cCidade3" />
+				<input class="button" type="submit" value="Editar" id="cCidade" />
+				<input class="button" type="submit" value="Apagar" id="cCidade" />
+				<input class="button" type="submit" value="Salvar" id="cCidade" />
 			
 			</form>
 					

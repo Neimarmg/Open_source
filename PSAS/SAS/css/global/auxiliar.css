@@ -21,11 +21,11 @@ main {
 }
 
 section {
-	width:40%;
-	height:50px; 
+	width:70%;
+	height:40px; 
 	float:left;
 	margin-left:10%;
-	margin-top: 10%;
+	margin-top:10%;
 }
 
 .label{
