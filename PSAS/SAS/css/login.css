@@ -32,11 +32,18 @@ input{
 	margin:0% 0% 0% 0%;
 	Width:98%;
 	height:38px;
+	background-color:#ccc; 
+}
+
+select{
+	background-color:#fef5ba;
+	
 }
 
 .button{
 	margin:10% 0% 0% 0%;
 	Width:98%;
+
 	
 }
 

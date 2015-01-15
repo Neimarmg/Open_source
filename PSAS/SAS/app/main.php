@@ -18,17 +18,42 @@
 		<section id='login'>
 			
 			<form action="autenticar.php" method="post">
+				<h1>Login de usuário</h1>
+				<br/> <br/> 
 				
+				<label for="">Pastoral:</label> 
+				<select name="codPastorais" id="codPastorais" type="checkbox" required>
+					<option value="0">...</option>
+					<?php 						
+						
+						$sql = "SELECT 
+									pastorais.codPastoral,
+									pastorais.nome,
+									proprietario.nomeRedusido 
+								FROM pastorais 
+									LEFT JOIN proprietario ON
+										pastorais.codProprietario = proprietario.codProprietario"; 
+						
+						$result = mysql_query($sql);
+						while ($fila = mysql_fetch_row($result)) {
+							echo "<option value=".$fila['0'].">".$fila['1']." | =>   ".$fila['2']."</option>";
+						}
+					?>
+				</select>	
+				
+				<br/> <br/> 
+				
+				
+								
 				<label for="usuario">Usuário:</label> 
-				<input id="usuario" type="txt" required/> 
-				
-				<br/> 
-				<br/> 
+				<input name="usuario" id="usuario" type="text" required/> 
+			
+				<br/> <br/> 
 				
 				<label for="senha">Senha:</label> 
-				<input name="senha" id="senha" type="password" required/>
-				
-				<br/> 
+				<input name="senha" id="senha" type="password" required/> 
+		
+				<br/> <br/> 
 				
 				<input class="button" name="logar" type="submit" value="Entrar" />
 			
