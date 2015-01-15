@@ -36,15 +36,13 @@
 						
 						$result = mysql_query($sql);
 						while ($fila = mysql_fetch_row($result)) {
-							echo "<option value=".$fila['0'].">".$fila['1']." | =>   ".$fila['2']."</option>";
+							echo "<option value=".$fila['0'].">".$fila['1']." =>   ".$fila['2']."</option>";
 						}
 					?>
 				</select>	
 				
 				<br/> <br/> 
 				
-				
-								
 				<label for="usuario">Usuário:</label> 
 				<input name="usuario" id="usuario" type="text" required/> 
 			
@@ -52,10 +50,8 @@
 				
 				<label for="senha">Senha:</label> 
 				<input name="senha" id="senha" type="password" required/> 
-		
-				<br/> <br/> 
-				
-				<input class="button" name="logar" type="submit" value="Entrar" />
+						
+				<input class="button" type="image" src="../imagens/log.jpg" alt="Imagem não pode ser carregada" name="logar" id="logar1"/>
 			
 			</form>
 		

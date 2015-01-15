@@ -7,7 +7,8 @@
 
 body{	
 	font-weight:bold;
-	color:#0080c0;	
+	color:#0080c0;
+	background:#dafa6b;	
 }
 
 main {
@@ -24,7 +25,7 @@ section#login {
 	margin-top: 20%;
 }
 
-.label{
+label{
 	margin:10% 20% 20% 0%;
 }
 
@@ -37,13 +38,11 @@ input{
 
 select{
 	background-color:#fef5ba;
-	
 }
 
 .button{
 	margin:10% 0% 0% 0%;
 	Width:98%;
-
-	
+	height:50px;
 }
 
