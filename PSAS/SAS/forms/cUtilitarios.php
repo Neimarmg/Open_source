@@ -7,8 +7,9 @@
 <head>
 	<title>Cadastro de Utilitarios</title>
 	<meta charset="ISO-8859-1">
-	<style type="text/css"> @import "../css/global.css" </style>
-	<style type="text/css"> @import "../css/login.css" </style>
+	<style type="text/css"> @import "../css/global/global.css" </style>
+	<style type="text/css"> @import "../css/global/base.css" </style>
+	<style type="text/css"> @import "../css/global/auxiliar.css" </style>
 	
 </head>
 

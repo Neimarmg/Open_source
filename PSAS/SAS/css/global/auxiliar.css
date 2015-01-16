@@ -1,42 +1,40 @@
 @charset "utf-8";
 /* CSS Document */
+/*Css de estilo de para telas auxiliares que alimentam combobox  de formularios*/
+
 
 * {
-	margin: 0px;
+	margin: margin:10% 10% 10% 10%;
 }
-
 
 
 main {
 	width:940px;
 	height:1300px;
 	margin:auto;
+
 }
 
 section {
-	width:40%;
-	height:180px; 
-	
+	width:60%;
+	height:40px; 
+
 }
 
 label{
 	margin:10% 20% 20% 0%;
+	Width:5%;
+	height:100px;
 }
 
 input{	
 	margin:0% 0% 0% 0%;
 	Width:98%;
 	height:38px;
-	background-color:#ccc; 
-}
-
-select{
-	background-color:#fef5ba;
 }
 
 .button{
-	margin:10% 0% 0% 0%;
-	Width:98%;
-	height:50px;
+	margin:8% 0% 0% 0%;
+	Width:24%;
 }
 

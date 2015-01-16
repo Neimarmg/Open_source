@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Dez-2014 às 21:06
--- Versão do servidor: 5.5.39
--- PHP Version: 5.4.31
+-- Generation Time: 16-Jan-2015 às 15:04
+-- Versão do servidor: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -33,10 +33,10 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   `usuario` varchar(30) DEFAULT NULL,
   `senha` varchar(6) DEFAULT NULL,
   `ativa` varchar(1) DEFAULT NULL COMMENT 'A= Ativo, I = Inativo',
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
@@ -57,11 +57,19 @@ CREATE TABLE IF NOT EXISTS `cidades` (
 `codCidade` int(10) unsigned NOT NULL,
   `codUf` int(10) unsigned DEFAULT NULL,
   `nome` varchar(200) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `cidades`
+--
+
+INSERT INTO `cidades` (`codCidade`, `codUf`, `nome`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 20, 'PORTO ALEGRE', '2015-01-11 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(2, 20, 'CANOAS', '2015-01-11 00:00:00', 'MASTES', '2015-01-11 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -79,10 +87,10 @@ CREATE TABLE IF NOT EXISTS `contatos` (
   `celular` int(12) unsigned DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `obs` text,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -93,7 +101,11 @@ CREATE TABLE IF NOT EXISTS `contatos` (
 
 CREATE TABLE IF NOT EXISTS `cursos` (
 `codCurso` int(10) unsigned NOT NULL,
-  `nome` varchar(100) DEFAULT NULL
+  `nome` varchar(100) DEFAULT NULL,
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -113,10 +125,10 @@ CREATE TABLE IF NOT EXISTS `enderecos` (
   `bairro` varchar(50) DEFAULT NULL,
   `codCidade` int(10) unsigned DEFAULT NULL,
   `cep` varchar(11) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -131,10 +143,10 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
   `codPessoa` int(10) unsigned DEFAULT NULL,
   `codTipo` int(10) unsigned DEFAULT NULL,
   `nomeFantasia` varchar(150) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -144,7 +156,11 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
 --
 
 CREATE TABLE IF NOT EXISTS `matriculas` (
-`codMatricula` int(10) unsigned NOT NULL
+`codMatricula` int(10) unsigned NOT NULL,
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -156,10 +172,10 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
 CREATE TABLE IF NOT EXISTS `niveisuser` (
 `codNiveisUser` int(10) unsigned NOT NULL,
   `descricao` varchar(30) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
@@ -177,6 +193,35 @@ INSERT INTO `niveisuser` (`codNiveisUser`, `descricao`, `datacreate`, `userCreat
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `pastorais`
+--
+
+CREATE TABLE IF NOT EXISTS `pastorais` (
+`codPastoral` int(10) unsigned NOT NULL,
+  `codProprietario` int(10) unsigned DEFAULT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Extraindo dados da tabela `pastorais`
+--
+
+INSERT INTO `pastorais` (`codPastoral`, `codProprietario`, `nome`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 1, 'PASTORAL DA CATEQUESE', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTES'),
+(2, 1, 'PASTORAL DA SAÚDE', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
+(3, 1, 'PASTORAL DA LITURGIA', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTES'),
+(4, 1, 'PASTORAL DA FAMILIA', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
+(5, 1, 'PASTORAL DA DIZIMO', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
+(6, 1, 'PASTORAL DA CAPELINHA', '2015-01-15 13:10:36', 'MASTER', '2015-01-15 13:10:36', 'MASTER'),
+(7, 1, 'PASTORAL DA CAPELINHA', '2015-01-15 13:10:38', 'MASTER', '2015-01-15 13:10:38', 'MASTER');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `pessoas`
 --
 
@@ -186,11 +231,40 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
   `codCidade` int(10) unsigned NOT NULL,
   `nome` varchar(180) DEFAULT NULL,
   `codProfissao` int(10) unsigned DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `proprietario`
+--
+
+CREATE TABLE IF NOT EXISTS `proprietario` (
+`codProprietario` int(10) unsigned NOT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `nomeRedusido` varchar(50) DEFAULT NULL,
+  `rua` varchar(200) DEFAULT NULL,
+  `nro` int(10) unsigned DEFAULT NULL,
+  `compl` varchar(20) DEFAULT NULL,
+  `bairro` varchar(50) DEFAULT NULL,
+  `codCidade` int(10) unsigned DEFAULT NULL,
+  `cep` varchar(11) DEFAULT NULL,
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `proprietario`
+--
+
+INSERT INTO `proprietario` (`codProprietario`, `nome`, `nomeRedusido`, `rua`, `nro`, `compl`, `bairro`, `codCidade`, `cep`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 'PARÓQUIA SANTO ANTONIO DO PARTENON', 'SANTO ANTONIO', 'RUA LUIZ DE CAMÕES', 35, NULL, 'PARTENON', NULL, NULL, '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -201,10 +275,10 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
 CREATE TABLE IF NOT EXISTS `tipofornecedor` (
 `codTipoFornecedor` int(10) unsigned NOT NULL,
   `descricao` varchar(50) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -216,17 +290,17 @@ CREATE TABLE IF NOT EXISTS `tipofornecedor` (
 CREATE TABLE IF NOT EXISTS `tipopessoa` (
 `codTipoPessoa` int(10) unsigned NOT NULL,
   `descricao` varchar(50) DEFAULT NULL,
-  `dataCreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlater` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Extraindo dados da tabela `tipopessoa`
 --
 
-INSERT INTO `tipopessoa` (`codTipoPessoa`, `descricao`, `dataCreate`, `userCreate`, `dataAlater`, `userAlter`) VALUES
+INSERT INTO `tipopessoa` (`codTipoPessoa`, `descricao`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
 (1, 'ALUNO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (2, 'FORNECEDOR', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
 (3, 'FUNCIONÁRIO', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
@@ -245,10 +319,10 @@ INSERT INTO `tipopessoa` (`codTipoPessoa`, `descricao`, `dataCreate`, `userCreat
 CREATE TABLE IF NOT EXISTS `tipoutilitario` (
 `codTipoUtilitario` int(10) unsigned NOT NULL,
   `descricao` varchar(60) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -267,7 +341,11 @@ INSERT INTO `tipoutilitario` (`codTipoUtilitario`, `descricao`, `datacreate`, `u
 --
 
 CREATE TABLE IF NOT EXISTS `turmas` (
-`codTurma` int(10) unsigned NOT NULL
+`codTurma` int(10) unsigned NOT NULL,
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -280,12 +358,43 @@ CREATE TABLE IF NOT EXISTS `uf` (
 `codUf` int(10) unsigned NOT NULL,
   `uf` varchar(5) DEFAULT NULL,
   `estado` varchar(200) DEFAULT NULL,
-  `brasil` varchar(50) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `pais` varchar(50) DEFAULT NULL,
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+
+--
+-- Extraindo dados da tabela `uf`
+--
+
+INSERT INTO `uf` (`codUf`, `uf`, `estado`, `pais`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(1, 'AL', 'ALOGOAS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(2, 'AP', 'AMAPÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(3, 'AM', 'AMAZONAS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(5, 'CA', 'CEARÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(6, 'DF', 'DISTRITO FEDERAL', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(7, 'ES', 'ESPÍRITO SANTO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(8, 'GO', 'GOIÁS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(9, 'MA', 'MARANHÃO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(10, 'MT', 'MATO GROSSO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(11, 'MS', 'MATO GROSSO DO SUL', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(12, 'MG', 'MINAS GERAIS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(13, 'PA', 'PARÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(14, 'PB', 'PARAÍBA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(15, 'PR', 'PARANÁ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(16, 'PE', 'PERNAMBUCO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(17, 'PI', 'PIAUÍ', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(18, 'RJ', 'RIO DE JANEIRO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(19, 'RN', 'RIO GRANDE DO NORTE', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(20, 'RS', 'RIO GRANDE DO SUL', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(21, 'RO', 'RONDÔNIA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(22, 'RR', 'RORAIMA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(23, 'SC', 'SANTA CATARINA', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(24, 'SP', 'SÃO PAULO', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(25, 'SE', 'SERGIPE', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER'),
+(26, 'TO', 'TOCANTINS', 'BRASIL', '2015-01-01 00:00:00', 'MASTER', '2015-01-11 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -298,10 +407,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `codPessoa` int(10) unsigned DEFAULT NULL,
   `codNivel` int(10) unsigned DEFAULT NULL,
   `usuario` varchar(25) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
@@ -321,10 +430,10 @@ CREATE TABLE IF NOT EXISTS `utilitarios` (
 `codUtilitario` int(10) unsigned NOT NULL,
   `codTipoUtilitario` int(10) unsigned DEFAULT NULL,
   `descricao` varchar(60) DEFAULT NULL,
-  `datacreate` datetime DEFAULT NULL,
-  `userCreate` varchar(30) DEFAULT NULL,
-  `dataAlter` datetime DEFAULT NULL,
-  `userAlter` varchar(30) DEFAULT NULL
+  `datacreate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userCreate` varchar(30) DEFAULT 'MASTER',
+  `dataAlter` datetime DEFAULT CURRENT_TIMESTAMP,
+  `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
@@ -407,10 +516,22 @@ ALTER TABLE `niveisuser`
  ADD PRIMARY KEY (`codNiveisUser`), ADD KEY `codNiveisUser` (`codNiveisUser`);
 
 --
+-- Indexes for table `pastorais`
+--
+ALTER TABLE `pastorais`
+ ADD PRIMARY KEY (`codPastoral`), ADD KEY `codProprietario` (`codProprietario`);
+
+--
 -- Indexes for table `pessoas`
 --
 ALTER TABLE `pessoas`
  ADD PRIMARY KEY (`codPessoa`), ADD KEY `codTipoPessoa` (`codTipoPessoa`), ADD KEY `codCidade` (`codCidade`), ADD KEY `codProfissao` (`codProfissao`);
+
+--
+-- Indexes for table `proprietario`
+--
+ALTER TABLE `proprietario`
+ ADD PRIMARY KEY (`codProprietario`);
 
 --
 -- Indexes for table `tipofornecedor`
@@ -467,7 +588,7 @@ MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `cidades`
 --
 ALTER TABLE `cidades`
-MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `contatos`
 --
@@ -499,10 +620,20 @@ MODIFY `codMatricula` int(10) unsigned NOT NULL AUTO_INCREMENT;
 ALTER TABLE `niveisuser`
 MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `pastorais`
+--
+ALTER TABLE `pastorais`
+MODIFY `codPastoral` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT for table `pessoas`
 --
 ALTER TABLE `pessoas`
 MODIFY `codPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `proprietario`
+--
+ALTER TABLE `proprietario`
+MODIFY `codProprietario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tipofornecedor`
 --
@@ -527,7 +658,7 @@ MODIFY `codTurma` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `uf`
 --
 ALTER TABLE `uf`
-MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --

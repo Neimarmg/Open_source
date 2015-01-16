@@ -1,8 +1,24 @@
-Pasta geral de formulários 
 
-C = Cadastro 
-	Este caracter será inserido por default na frente dos formulários de cadastratro
+=============================< Pasta geral de CSS - estilos >=================================
+
+Os importers de estilos devem sempre obdecer esta ordem
 	
+	1ª) global.css este arquivo comportas as configuração compativeis com todas as paginas "NÃO DEVE SER PERSONALIZADO"
+		<style type="text/css"> @import "../css/global/global.css" </style>
+	
+	2ª) fontes.css este arquivo coporta os estilos mais generico de fontes do sistemas "NÃO DEVE SER PERSONALIZADO"
+		<style type="text/css"> @import "../css/global/fontes.css" </style>
+			
+	3ª) ???.css este é onde deve ser criada toda a personalização especifica de cada pagina 
+			<style type="text/css"> @import "../css/???.css" </style>
 
-E = Eduacacional
-	Este caracter será inserido por default Formuários de execução de atividades educacionais.
+			
+=============================< Anotação de html >==============================================
+Anotação css id Ex: Input#login
+	Chamada no html id="login" isso dentro da tag
+		
+Anotação css class Ex: .nome (Pode ser qualquer nome)
+	Chamada no html class="login" isso dentro da tag
+
+Anotação css Ex: input (para tgs do hatml)
+	Chamada no html input (isso é o nome da propria tag)
