@@ -19,8 +19,9 @@
 		<section >
 			<fieldset>		
 				<form action="autenticar.php" method="post">
-					<h1>Login de usuário</h1>
-					<br/> <br/> 
+					<br/> 
+					<h3>Login de usuário</h3>
+					<br/> <br/> <br/> 
 				
 					<label for="">Pastoral:</label> 
 					<select name="codPastorais" id="codPastorais" type="checkbox" required>
@@ -57,7 +58,6 @@
 				</form>
 			</fieldset>
 		</section>
-	
 	</main>
 	<footer>
 		<p>Todas os registro aqui são propriedade de seus respectivos donos. <br> ©2014 APL soluções. Todos os direitos reservados. </p>

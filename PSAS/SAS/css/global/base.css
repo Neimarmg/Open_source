@@ -4,7 +4,13 @@
  * Css  global de definidor de fontes padrões para o sistema a personalização deve ser feita no css de cada pagina*/
 
 body{ /*Definições de fundo padrão de todas as tealas */
-	background-color: #d1ffa4;	
+	background-color: #e2ffc6;	
+}
+
+body{ /*Definição padrão de todas as telas*/
+	font-family: sans-serif, Arial, Verdana;
+	font-size:12px;
+	color:#0080c0;
 }
 
 section {
@@ -13,12 +19,4 @@ section {
 	margin-right:auto;
 	width:auto;
 	height:auto;
-}
-
-
-body{ /*Definição padrão de todas as telas*/
-	font-family: sans-serif, Arial, Verdana;
-	font-size:16px;
-	font-weight:bold;
-	color:#0080c0;
 }

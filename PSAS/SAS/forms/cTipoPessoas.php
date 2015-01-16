@@ -8,7 +8,8 @@
 	<title>Cadastro de tipos de pessoas</title>
 	<meta charset="ISO-8859-1">
 	<style type="text/css"> @import "../css/global/global.css" </style>
-	<style type="text/css"> @import "../css/global/fontes.css" </style>
+	<style type="text/css"> @import "../css/global/base.css" </style>
+	<style type="text/css"> @import "../css/global/auxiliar.css" </style>
 	
 </head>
 

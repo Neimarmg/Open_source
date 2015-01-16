@@ -5,14 +5,6 @@ Css  global de definidor de padrões globais para o sistema a personalização deve
 neste css deve-se apenas definir estilos genéricos*/
 
 
-h1{
-	text-align: center;
-}
-
-
-h3{
-	text-align: center;
-}
 
 footer {
 	width: 100%;
@@ -48,14 +40,11 @@ select{
 	background-color:#c0c0c0;
 }
 
-fieldset{
-	border-color:#c0c0c0;
+h3{
+	text-align:center;
+	font-size: 18px;
 }
 
-	
-}
-footer p{
-	color: #3366FF;
-	text-align: center;
-	font-size: 12px;
+fieldset{
+	border-color:#c0c0c0;
 }

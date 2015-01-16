@@ -18,7 +18,7 @@
 	<main>
 		<section id='cCidades'>
 			<fieldset>
-
+	
 				<h3>Cadastro de cidades</h3>
 				
 				<form method="post" action="?go=Novo">
@@ -52,7 +52,6 @@
 			</fieldset>			
 		</section>	
 	</main>
-</a > 
 	<footer>
 		
 	</footer>
