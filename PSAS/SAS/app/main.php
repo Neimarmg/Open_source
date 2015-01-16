@@ -8,53 +8,54 @@
 	<title>Tela de loguin de usuário</title>
 	<meta charset="ISO-8859-1">
 	<style type="text/css"> @import "../css/global/global.css" </style>
-	<style type="text/css"> @import "../css/global/fontes.css" </style>
+	<style type="text/css"> @import "../css/global/base.css" </style>
 	<style type="text/css"> @import "../css/login.css" </style>
 
 </head>
 
 <body>
 	<main>
-		<section id='login'>
-			
-			<form action="autenticar.php" method="post">
-				<h1>Login de usuário</h1>
-				<br/> <br/> 
+	
+		<section >
+			<fieldset>		
+				<form action="autenticar.php" method="post">
+					<h1>Login de usuário</h1>
+					<br/> <br/> 
 				
-				<label for="">Pastoral:</label> 
-				<select name="codPastorais" id="codPastorais" type="checkbox" required>
-					<option value="0">...</option>
-					<?php 						
-						
-						$sql = "SELECT 
-									pastorais.codPastoral,
-									pastorais.nome,
-									proprietario.nomeRedusido 
-								FROM pastorais 
-									LEFT JOIN proprietario ON
-										pastorais.codProprietario = proprietario.codProprietario"; 
-						
-						$result = mysql_query($sql);
-						while ($fila = mysql_fetch_row($result)) {
-							echo "<option value=".$fila['0'].">".$fila['1']." =>   ".$fila['2']."</option>";
-						}
-					?>
-				</select>	
+					<label for="">Pastoral:</label> 
+					<select name="codPastorais" id="codPastorais" type="checkbox" required>
+						<option value="0">...</option>
+						<?php 						
+							
+							$sql = "SELECT 
+										pastorais.codPastoral,
+										pastorais.nome,
+										proprietario.nomeRedusido 
+									FROM pastorais 
+										LEFT JOIN proprietario ON
+											pastorais.codProprietario = proprietario.codProprietario"; 
+							
+							$result = mysql_query($sql);
+							while ($fila = mysql_fetch_row($result)) {
+								echo "<option value=".$fila['0'].">".$fila['1']." =>   ".$fila['2']."</option>";
+							}
+						?>
+					</select>	
+					
+					<br/> <br/> 
+					
+					<label for="usuario">Usuário:</label> 
+					<input name="usuario" id="usuario" type="text" required/> 
 				
-				<br/> <br/> 
+					<br/> <br/> 
+					
+					<label for="senha">Senha:</label> 
+					<input name="senha" id="senha" type="password" required/> 
+							
+					<input class="button" type="image" src="../imagens/log.jpg" alt="Imagem não pode ser carregada" name="logar" id="logar1"/>
 				
-				<label for="usuario">Usuário:</label> 
-				<input name="usuario" id="usuario" type="text" required/> 
-			
-				<br/> <br/> 
-				
-				<label for="senha">Senha:</label> 
-				<input name="senha" id="senha" type="password" required/> 
-						
-				<input class="button" type="image" src="../imagens/log.jpg" alt="Imagem não pode ser carregada" name="logar" id="logar1"/>
-			
-			</form>
-		
+				</form>
+			</fieldset>
 		</section>
 	
 	</main>

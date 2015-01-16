@@ -7,25 +7,18 @@
 	margin: margin:10% 10% 10% 10%;
 }
 
-body{
-	background:#ccc;
-	font-size:16px;
-	font-weight:bold;
-	color:#0080c0;
-}
 
 main {
 	width:940px;
 	height:1300px;
 	margin:auto;
+
 }
 
 section {
 	width:60%;
 	height:40px; 
-	float:left;
-	margin-left:10%;
-	margin-top:10%;
+
 }
 
 .label{
@@ -41,7 +34,7 @@ input{
 }
 
 .button{
-	margin:5% 0% 0% 0%;
+	margin:8% 0% 0% 0%;
 	Width:24%;
 }
 

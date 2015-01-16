@@ -8,7 +8,7 @@
 	<title>Cadastro de cidades</title>
 	<meta charset="ISO-8859-1">
 	<style type="text/css"> @import "../css/global/global.css" </style>
-	<style type="text/css"> @import "../css/global/fontes.css" </style>
+	<style type="text/css"> @import "../css/global/base.css" </style>
 	<style type="text/css"> @import "../css/global/auxiliar.css" </style>
 	
 </head>
@@ -17,39 +17,39 @@
 	
 	<main>
 		<section id='cCidades'>
-			<h1>Cadastro de cidades</h1>
-			 
-			
-			<form method="post" action="?go=Novo">
+			<fieldset>
+
+				<h3>Cadastro de cidades</h3>
 				
-				<br/> <br/> 
-				
-				<label for="Nome">Nome da cidade:</label> 
-				<input  name="nome" id="nome" type="text" required/> 				
-				
-				<br/> <br/> <br/> 
-				
-				<label for="">Unidade federativa:</label> 
-				<select name="codUf" id="codUf" type="checkbox" required>
-					<option value="0">...</option>
-					<?php 						
-						$sql = "select codUf, uf, estado from uf order by uf"; 
-						$result = mysql_query($sql);
-						while ($fila = mysql_fetch_row($result)) {
-							echo "<option value=".$fila['0'].">".$fila['1']." - ".$fila['2']."</option>";
-						}
-					?>
-				</select>	
-						
-				<br/> 
+				<form method="post" action="?go=Novo">
 					
-				<input class="button" type="submit" value="Novo" id="cCidade" />
-				<input class="button" type="submit" value="Editar" id="cCidade" />
-				<input class="button" type="submit" value="Apagar" id="cCidade" />
-				<input class="button" type="submit" value="Salvar" id="cCidade" />
-			
-			</form>
+					<br/> <br/> 
 					
+					<label for="Nome">Nome da cidade:</label> 
+					<input  name="nome" id="nome" type="text" required/> 				
+					
+					<br/> <br/> <br/> 
+					
+					<label for="">Unidade federativa:</label> 
+					<select name="codUf" id="codUf" type="checkbox" required>
+						<option value="0">...</option>
+						<?php 						
+							$sql = "select codUf, uf, estado from uf order by uf"; 
+							$result = mysql_query($sql);
+							while ($fila = mysql_fetch_row($result)) {
+								echo "<option value=".$fila['0'].">".$fila['1']." - ".$fila['2']."</option>";
+							}
+						?>
+					</select>	
+							
+					<br/> 
+					<input class="button" type="image" src="../imagens/novo.jpg" alt="Imagem não pode ser carregada" name="novo" id="cCidade1"/>	
+					<input class="button" type="image" src="../imagens/editar.jpg" alt="Imagem não pode ser carregada" name="editar" id="cCidade2"/>	
+					<input class="button" type="image" src="../imagens/excluir.jpg" alt="Imagem não pode ser carregada" name="apagar" id="cCidade3"/>	
+					<input class="button" type="image" src="../imagens/salvar.jpg" alt="Imagem não pode ser carregada" name="salvar" id="cCidade4"/>	
+				
+				</form>
+			</fieldset>			
 		</section>	
 	</main>
 </a > 

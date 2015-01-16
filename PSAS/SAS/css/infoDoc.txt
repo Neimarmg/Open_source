@@ -1,4 +1,5 @@
-Pasta geral de CSS - estilos
+
+=============================< Pasta geral de CSS - estilos >=================================
 
 Os importers de estilos devem sempre obdecer esta ordem
 	
@@ -11,4 +12,13 @@ Os importers de estilos devem sempre obdecer esta ordem
 	3ª) ???.css este é onde deve ser criada toda a personalização especifica de cada pagina 
 			<style type="text/css"> @import "../css/???.css" </style>
 
+			
+=============================< Anotação de html >==============================================
+Anotação css id Ex: Input#login
+	Chamada no html id="login" isso dentro da tag
+		
+Anotação css class Ex: .nome (Pode ser qualquer nome)
+	Chamada no html class="login" isso dentro da tag
 
+Anotação css Ex: input (para tgs do hatml)
+	Chamada no html input (isso é o nome da propria tag)
