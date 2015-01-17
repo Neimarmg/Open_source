@@ -38,7 +38,7 @@
 							
 							$result = mysql_query($sql);
 							while ($fila = mysql_fetch_row($result)) {
-								echo "<option value=".$fila['0'].">".$fila['1']." =>   ".$fila['2']."</option>";
+								echo "<option value=".$fila['0'].">".$fila['1']."   -  ".$fila['2']." </option>";
 							}
 						?>
 					</select>	

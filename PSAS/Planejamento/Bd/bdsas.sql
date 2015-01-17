@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Jan-2015 às 15:04
+-- Generation Time: 17-Jan-2015 às 16:58
 -- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   `ativa` varchar(1) DEFAULT NULL COMMENT 'A= Ativo, I = Inativo',
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `cidades` (
   `nome` varchar(200) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `contatos` (
   `obs` text,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `cursos` (
   `nome` varchar(100) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `enderecos` (
   `cep` varchar(11) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
   `nomeFantasia` varchar(150) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
 `codMatricula` int(10) unsigned NOT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `niveisuser` (
   `descricao` varchar(30) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
@@ -202,22 +202,31 @@ CREATE TABLE IF NOT EXISTS `pastorais` (
   `nome` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Extraindo dados da tabela `pastorais`
 --
 
 INSERT INTO `pastorais` (`codPastoral`, `codProprietario`, `nome`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
-(1, 1, 'PASTORAL DA CATEQUESE', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTES'),
-(2, 1, 'PASTORAL DA SAÚDE', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
-(3, 1, 'PASTORAL DA LITURGIA', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTES'),
-(4, 1, 'PASTORAL DA FAMILIA', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
-(5, 1, 'PASTORAL DA DIZIMO', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
-(6, 1, 'PASTORAL DA CAPELINHA', '2015-01-15 13:10:36', 'MASTER', '2015-01-15 13:10:36', 'MASTER'),
-(7, 1, 'PASTORAL DA CAPELINHA', '2015-01-15 13:10:38', 'MASTER', '2015-01-15 13:10:38', 'MASTER');
+(1, 1, 'BASE MISSIONÁRIA ECUMÊNICA', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTES'),
+(2, 1, 'CORAL DE SANTO ANTÔNIO', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
+(3, 1, 'MINISTROS DA EUCARISTIA', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTES'),
+(4, 1, 'PASTORAL FAMILIAR', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
+(5, 1, 'PASTORAL CATEQUÉTICA', '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER'),
+(6, 1, 'PASTORAL DA BENÇÃO', '2015-01-15 13:10:36', 'MASTER', '2015-01-15 13:10:36', 'MASTER'),
+(7, 1, 'PASTORAL DA JUVENTUDE', '2015-01-15 13:10:38', 'MASTER', '2015-01-15 13:10:38', 'MASTER'),
+(8, 1, 'PASTORAL DA MÚSICA LITÚRGICA', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(9, 1, 'PASTORAL DA SAÚDE', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(10, 1, 'PASTORAL DO BATISMO', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(11, 1, 'PASTORAL DO DÍZIMO', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(12, 1, 'PASTORAL DO PÃO', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(13, 1, 'PASTORAL DOS SURDOS', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(14, 1, 'PASTORAL LITÚRGICA', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(15, 1, 'SERVIÇO DOS GUARDIÃES', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(16, 1, 'SINGULARES COM CRISTO', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -233,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
   `codProfissao` int(10) unsigned DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -255,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `proprietario` (
   `cep` varchar(11) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -264,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `proprietario` (
 --
 
 INSERT INTO `proprietario` (`codProprietario`, `nome`, `nomeRedusido`, `rua`, `nro`, `compl`, `bairro`, `codCidade`, `cep`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
-(1, 'PARÓQUIA SANTO ANTONIO DO PARTENON', 'SANTO ANTONIO', 'RUA LUIZ DE CAMÕES', 35, NULL, 'PARTENON', NULL, NULL, '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER');
+(1, 'PARÓQUIA SANTO ANTONIO DO PARTENON', 'Sto Antonio', 'RUA LUIZ DE CAMÕES', 35, NULL, 'PARTENON', NULL, NULL, '2015-01-14 00:00:00', 'MASTER', '2015-01-14 00:00:00', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -277,7 +286,7 @@ CREATE TABLE IF NOT EXISTS `tipofornecedor` (
   `descricao` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -292,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `tipopessoa` (
   `descricao` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
@@ -321,7 +330,7 @@ CREATE TABLE IF NOT EXISTS `tipoutilitario` (
   `descricao` varchar(60) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -344,7 +353,7 @@ CREATE TABLE IF NOT EXISTS `turmas` (
 `codTurma` int(10) unsigned NOT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -361,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `uf` (
   `pais` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
@@ -409,7 +418,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `usuario` varchar(25) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -432,7 +441,7 @@ CREATE TABLE IF NOT EXISTS `utilitarios` (
   `descricao` varchar(60) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
@@ -623,7 +632,7 @@ MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8
 -- AUTO_INCREMENT for table `pastorais`
 --
 ALTER TABLE `pastorais`
-MODIFY `codPastoral` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `codPastoral` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `pessoas`
 --
