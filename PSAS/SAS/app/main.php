@@ -59,9 +59,11 @@
 			</fieldset>
 		</section>
 	</main>
+	
 	<footer>
 		<p>Todas os registro aqui são propriedade de seus respectivos donos. <br> ©2014 APL soluções. Todos os direitos reservados. </p>
 	</footer>
+	
 </body>
 </html>
 
