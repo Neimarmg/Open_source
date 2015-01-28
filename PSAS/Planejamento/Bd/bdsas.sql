@@ -66,7 +66,6 @@ CREATE TABLE IF NOT EXISTS `cidades` (
 --
 -- Extraindo dados da tabela `cidades`
 --
-
 INSERT INTO `cidades` (`codCidade`, `codUf`, `nome`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
 (1, 20, 'ENTRE RIOS DO SUL', '2015-01-11 02:00:00', 'MASTER', '2015-01-11 02:00:00', 'MASTER'),
 (2, 8, 'NOVA GLORIA', '2015-01-11 02:00:00', 'MASTER', '2015-01-11 02:00:00', 'MASTER'),
