@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <?php
-//require_once 'class/conexao.php';
+require_once '..class/conexao.php';
 ?>
 
 <html>

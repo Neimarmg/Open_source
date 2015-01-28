@@ -21,7 +21,12 @@
 	
 				<h3>Cadastro de cidades</h3>
 				
-				<form method="post" action="?go=Novo">
+				<form method="post" 
+					action="?go=Novo"
+					action="?go=editar"
+					action="?go=apgar"
+					action="?go=salvar"
+				>
 					
 					<br/> <br/> 
 					
