@@ -43,7 +43,7 @@
 					</select>	
 							
 					<br/> 
-					<input class="button" type="image" src="../imagens/novo.jpg" alt="Imagem não pode ser carregada" name="novo" id="cCidade1"/>	
+					<input class="button" type="image" src="../imagens/novo.jpg" alt="Imagem não pode ser carregada" name="novo" id="cCidades"/>	
 					<input class="button" type="image" src="../imagens/editar.jpg" alt="Imagem não pode ser carregada" name="editar" id="cCidade2"/>	
 					<input class="button" type="image" src="../imagens/excluir.jpg" alt="Imagem não pode ser carregada" name="apagar" id="cCidade3"/>	
 					<input class="button" type="image" src="../imagens/salvar.jpg" alt="Imagem não pode ser carregada" name="salvar" id="cCidade4"/>	
@@ -58,20 +58,22 @@
 <?php	
 	/*Insersão de novo usuario*/
 	include_once '../class/validadaDados.php';
+	include_once '../class/utilitario.php';
 	
 	if (@$_GET['go'] == 'Novo'){
 		
 		validadaDados::ValidaCampo($nome = $_POST['nome']);
 		validadaDados::ValidaCampo($codUf = $_POST['codUf']);
 
-		
+			
 		/*Validação de campos obrigatórios*/
 		if (validadaDados::$Contador > 0) {
-			validadaDados::msgAlerta(false, null);
+			utilitario::msgAlerta(true, '?????');
 		
 		}else{
-				@mysql_query("INSERT INTO (codUf, nome) VALUES ('$codUf','$nome' )");
-				validadaDados::msgAlerta(true,"<script>alert('Usuário cadastrado com sucesso!');</script>");
-			}
-		}	
+			@mysql_query("INSERT INTO `cidades`(`codCidade`, `codUf`, `nome`) VALUES (NULL,'$codUf','$nome')");
+			utilitario::msgAlerta(true,'Cidade cadastrada com sucesso!');
+		}
+		
+	}	
 ?>

@@ -9,15 +9,8 @@ class utilitario {
 		} else{
 			echo "<script>alert('$msg')</script>";
 		}				
-	}			 		
-			 		
-	
+	}	
 }
 
 
-?>
-
-/*Chamada de testes */
-<?php 
-	//TESTES	
 ?>
