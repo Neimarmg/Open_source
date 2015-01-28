@@ -52,8 +52,26 @@
 			</fieldset>			
 		</section>	
 	</main>
-	<footer>
-		
-	</footer>
 </body>
 </html>
+
+<?php	
+	/*Insersão de novo usuario*/
+	include_once '../class/validadaDados.php';
+	
+	if (@$_GET['go'] == 'Novo'){
+		
+		validadaDados::ValidaCampo($nome = $_POST['nome']);
+		validadaDados::ValidaCampo($codUf = $_POST['codUf']);
+
+		
+		/*Validação de campos obrigatórios*/
+		if (validadaDados::$Contador > 0) {
+			validadaDados::msgAlerta(false, null);
+		
+		}else{
+				@mysql_query("INSERT INTO (codUf, nome) VALUES ('$codUf','$nome' )");
+				validadaDados::msgAlerta(true,"<script>alert('Usuário cadastrado com sucesso!');</script>");
+			}
+		}	
+?>
