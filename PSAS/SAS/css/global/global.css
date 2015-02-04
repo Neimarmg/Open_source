@@ -48,3 +48,7 @@ h3{
 fieldset{
 	border-color:#c0c0c0;
 }
+
+legend {
+	color: #000;
+}

@@ -9,7 +9,7 @@
 	<meta charset="ISO-8859-1">
 	<style type="text/css"> @import "../css/global/global.css" </style>
 	<style type="text/css"> @import "../css/global/base.css" </style>
-	<style type="text/css"> @import "../css/global/auxiliar.css" </style>
+	<style type="text/css"> @import "../css/pessoas.css" </style>
 	
 </head>
 
@@ -28,13 +28,15 @@
 				>
 					
 					<br/> <br/> 
-					
+				<fieldset>
+					<legend>Dados pessois</legend>
+						
 					<label for="Nome">Nome pessoa:</label> 
 					<input  name="nome" id="nome" type="text" required/> 
 					
 					<br/> <br/> 
 					<label for="">Tipo Pessoa:</label> 
-					<select name="codTipoPessoa" id="codTipoPessoa" type="checkbox" required>
+					<select name="codTipoPessoa" id="codTipoPessoa" type="text" required>
 						<option value="0">...</option>
 						<?php 						
 							$sql = "SELECT `codTipoPessoa`,`descricao` 
@@ -49,7 +51,7 @@
 					<br/> <br/> 
 					
 					<label for="">Profissão:</label> 
-					<select name="codProfissao" id="codProfissao" type="checkbox" required>
+					<select name="codProfissao" id="codProfissao" type="text" required>
 						<option value="0">...</option>
 						<?php 						
 							$sql = "SELECT `codUtilitario`,`descricao` 
@@ -67,7 +69,7 @@
 					<br/><br/>
 					
 					<label for="">cidade:</label> 
-					<select name="codCidade" id="codCidade" type="checkbox" required>
+					<select name="codCidade" id="codCidade" type="text" required>
 						<option value="0">...</option>
 						<?php 						
 							$sql = "SELECT codCidade ,NOME ,UF
@@ -82,6 +84,21 @@
 						?>
 					</select>
 					
+					<br/><br/>
+					
+					<label for="ativo">Ativo</label>
+					<input class="checbox" type="checkbox" name="ativo" id="ativo" value="-1" />
+	
+				</fieldset>
+				
+				<fieldset>
+					<legend>Endereços</legend>
+				</fieldset>
+				
+				<fieldset>
+					<legend>Contatos</legend>
+				</fieldset>
+				
 				
 				<br/> 
 				<input class="button" type="image" src="../imagens/novo.jpg" alt="Imagem não pode ser carregada" name="novo" id="cPessoas"/>	

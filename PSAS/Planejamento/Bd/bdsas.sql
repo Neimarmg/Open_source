@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Jan-2015 às 23:07
+-- Generation Time: 04-Fev-2015 às 21:54
 -- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cidades` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6261 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6254 ;
 
 --
 -- Extraindo dados da tabela `cidades`
@@ -5374,6 +5374,7 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
   `rg` varchar(12) NOT NULL,
   `cpf` varchar(15) NOT NULL,
   `codProfissao` int(10) unsigned DEFAULT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT '-1',
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -5384,8 +5385,8 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
 -- Extraindo dados da tabela `pessoas`
 --
 
-INSERT INTO `pessoas` (`codPessoa`, `codTipoPessoa`, `nome`, `rg`, `cpf`, `codProfissao`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
-(3, 1, 'NEIMAR MOISES', '100010011000', '11000000012121', NULL, '2015-01-28 21:11:58', 'MASTER', '2015-01-28 21:11:58', 'MASTER');
+INSERT INTO `pessoas` (`codPessoa`, `codTipoPessoa`, `nome`, `rg`, `cpf`, `codProfissao`, `ativo`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
+(3, 1, 'NEIMAR MOISES', '100010011000', '11000000012121', NULL, -1, '2015-01-28 21:11:58', 'MASTER', '2015-01-28 21:11:58', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -6155,7 +6156,7 @@ MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `cidades`
 --
 ALTER TABLE `cidades`
-MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6261;
+MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6254;
 --
 -- AUTO_INCREMENT for table `contatos`
 --
