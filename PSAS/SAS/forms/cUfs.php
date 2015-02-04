@@ -18,7 +18,7 @@
 		<section id='cUfs'>
 			<fieldset>
 	
-				<h3>Cadastro de uidades federativas</h3>
+				<h3>Cadastro de unidades federativas</h3>
 				
 				<form method="post" action="?go=Novo">
 					

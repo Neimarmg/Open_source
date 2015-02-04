@@ -27,10 +27,12 @@
 					action="?go=salvar"
 				>
 					
-					<br/> <br/> 
+				<br/> <br/> 
 				<fieldset>
 					<legend>Dados pessois</legend>
-						
+					
+					<br/>						
+					
 					<label for="Nome">Nome pessoa:</label> 
 					<input  name="nome" id="nome" type="text" required/> 
 					
@@ -86,8 +88,8 @@
 					
 					<br/><br/>
 					
-					<label for="ativo">Ativo</label>
-					<input class="checbox" type="checkbox" name="ativo" id="ativo" value="-1" />
+					<label class="labelAtivo" for="ativo">Ativo:</label>
+					<input class="inputAtivo" type="checkbox" name="ativo" id="ativo" value="-1" />
 	
 				</fieldset>
 				

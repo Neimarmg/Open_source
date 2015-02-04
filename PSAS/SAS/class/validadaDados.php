@@ -10,6 +10,21 @@ class validadaDados {
 		 }
 		 return validadaDados::$Contador;
 	}
+	
+		
+	public static function registroExitente($ExibirModal) {
+		utilitario::msgAlerta($ExibirModal, 'Registro já existe!');
+	}
+	
+	
+	public static function registradoComSucesso($ExibirModal) {
+		utilitario::msgAlerta($ExibirModal, 'Cadastrado com sucesso!');
+	}
+	
+	
+	public static function registroNaoInserido($ExibirModal) {
+		utilitario::msgAlerta($ExibirModal, 'Não foi possivél inserir o registro');
+	}
 }
 ?>
 
