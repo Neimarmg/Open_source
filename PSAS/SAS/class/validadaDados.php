@@ -25,6 +25,10 @@ class validadaDados {
 	public static function registroNaoInserido($ExibirModal) {
 		utilitario::msgAlerta($ExibirModal, 'Não foi possivél inserir o registro');
 	}
+	
+	public static function aletaNaoPrechimento($ExibirModal) {
+		utilitario::msgAlerta($ExibirModal, 'Existem campos obrigatórios não preechidos!');
+	}
 }
 ?>
 

@@ -71,13 +71,31 @@
 		validadaDados::ValidaCampo($codUf = $_POST['codUf']);
 
 			
-		/*Validação de campos obrigatórios*/
+		/*Validação de campos obrigatórios não prenchidos*/
 		if (validadaDados::$Contador > 0) {
-			utilitario::msgAlerta(true, '?????');
+			validadaDados::aletaNaoPrechimento(true);
 		
-		}else{
-			@mysql_query("INSERT INTO `cidades`(`codCidade`, `codUf`, `nome`) VALUES (NULL,'$codUf','$nome')");
-			utilitario::msgAlerta(true,'Cidade cadastrada com sucesso!');
+		}else{			
+			/*Controle de duplicação de registros*/
+			$query =  mysql_num_rows(mysql_query("SELECT *FROM `cidades` WHERE `nome` = '$nome'"));
+			
+			if ($query == 0) {
+			
+				@mysql_query("INSERT INTO `cidades`(`codCidade`, `codUf`, `nome`) VALUES (NULL,'$codUf','$nome')");
+			
+				/*Confirmação de inserção de registro*/
+				$query = mysql_num_fields(mysql_query("SELECT *FROM `cidades` WHERE `nome` = '$nome'"));
+					
+				if ($query = 1) {
+					validadaDados::registradoComSucesso(true);
+				
+				}else{
+					validadaDados::registroNaoInserido(true);
+				}
+
+			}else{
+				validadaDados::registroExitente(true);
+			}
 		}
 		
 	}	
