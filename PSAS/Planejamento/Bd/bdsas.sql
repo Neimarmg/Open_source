@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Fev-2015 às 00:21
+-- Generation Time: 05-Fev-2015 às 23:23
 -- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -5474,7 +5474,7 @@ CREATE TABLE IF NOT EXISTS `tipoutilitario` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `tipoutilitario`
@@ -5587,7 +5587,7 @@ CREATE TABLE IF NOT EXISTS `utilitarios` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1105 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1113 ;
 
 --
 -- Extraindo dados da tabela `utilitarios`
@@ -6030,7 +6030,8 @@ INSERT INTO `utilitarios` (`codUtilitario`, `descricao`, `codTipoUtilitario`, `f
 (1100, 'ZELADOR', 4, 0, '2014-12-26 02:00:00', 'MASTER', '2014-12-26 02:00:00', 'MASTER'),
 (1101, 'ZOOGEÓGRAFO', 4, 0, '2014-12-26 02:00:00', 'MASTER', '2014-12-26 02:00:00', 'MASTER'),
 (1102, 'ZOÓLOGO', 4, 0, '2014-12-26 02:00:00', 'MASTER', '2014-12-26 02:00:00', 'MASTER'),
-(1103, 'ZOOTECNISTA', 4, 0, '2014-12-26 02:00:00', 'MASTER', '2014-12-26 02:00:00', 'MASTER');
+(1103, 'ZOOTECNISTA', 4, 0, '2014-12-26 02:00:00', 'MASTER', '2014-12-26 02:00:00', 'MASTER'),
+(1111, 'CASA', 2, -1, '2015-02-05 22:09:24', 'MASTER', '2015-02-05 22:09:24', 'MASTER');
 
 --
 -- Indexes for dumped tables
@@ -6217,7 +6218,7 @@ MODIFY `codTipoPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9
 -- AUTO_INCREMENT for table `tipoutilitario`
 --
 ALTER TABLE `tipoutilitario`
-MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `turmas`
 --
@@ -6237,7 +6238,7 @@ MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `utilitarios`
 --
 ALTER TABLE `utilitarios`
-MODIFY `codUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1105;
+MODIFY `codUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1113;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
