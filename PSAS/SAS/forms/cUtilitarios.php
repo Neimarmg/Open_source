@@ -76,7 +76,7 @@
 		validadaDados::ValidaCampo($codTipoUtilitario = $_POST['codTipoUtilitario']);
 		validadaDados::ValidaCampo($favorito = $_POST['favorito']);
 			
-	/*Variavel contatenação de string para parametro de sql*/
+		/*Variavel contatenação de string para parametro de sql*/
 		$filtro = utilitario::contatena($nome.$codTipoUtilitario);
 		
 		/*Validação de campos obrigatórios não prenchidos*/
@@ -90,8 +90,9 @@
 			
 			if ($query == 0) {
 			
-				@mysql_query("INSERT INTO `utilitarios`(`codUtilitario`, `descricao`, `codTipoUtilitario`, `favorito`) VALUES (NULL, '$nome', '$codTipoUtilitario', '$favorito')");		
 				/*Confirmação de inserção de registro*/
+				@mysql_query("INSERT INTO `utilitarios`(`codUtilitario`, `descricao`, `codTipoUtilitario`, `favorito`) VALUES (NULL, '$nome', '$codTipoUtilitario', '$favorito')");		
+				
 				$query = mysql_num_rows(mysql_query("SELECT * FROM `utilitarios` WHERE CONCAT(`descricao`,`codTipoUtilitario`) = '$filtro'"));	
 					
 				if ($query = 1) {
