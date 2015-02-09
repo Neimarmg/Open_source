@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Fev-2015 às 23:23
+-- Generation Time: 09-Fev-2015 às 18:38
 -- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cidades` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6254 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6256 ;
 
 --
 -- Extraindo dados da tabela `cidades`
@@ -5309,7 +5309,7 @@ CREATE TABLE IF NOT EXISTS `niveisuser` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Extraindo dados da tabela `niveisuser`
@@ -5474,7 +5474,7 @@ CREATE TABLE IF NOT EXISTS `tipoutilitario` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `tipoutilitario`
@@ -5515,7 +5515,7 @@ CREATE TABLE IF NOT EXISTS `uf` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Extraindo dados da tabela `uf`
@@ -5563,14 +5563,16 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`codUsuario`, `codPessoa`, `codNivel`, `usuario`, `datacreate`, `userCreate`, `dataAlter`, `userAlter`) VALUES
-(1, 0, 1, 'MASTER', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER');
+(1, 0, 1, 'MASTER', '2014-12-26 00:00:00', 'MASTER', '2014-12-26 00:00:00', 'MASTER'),
+(7, 3, 7, 'ELISMAR', '2015-02-09 17:35:14', 'MASTER', '2015-02-09 17:35:14', 'MASTER'),
+(8, 0, 1, 'NEIMAR', '2015-02-09 17:36:47', 'MASTER', '2015-02-09 17:36:47', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -5582,7 +5584,7 @@ CREATE TABLE IF NOT EXISTS `utilitarios` (
 `codUtilitario` int(10) unsigned NOT NULL,
   `descricao` varchar(60) DEFAULT NULL,
   `codTipoUtilitario` int(10) unsigned DEFAULT NULL,
-  `favorito` tinyint(1) NOT NULL DEFAULT '-1',
+  `favorito` tinyint(1) NOT NULL DEFAULT '-1' COMMENT 'Marcação opcional para personalizar as listas com as opções mais usadas',
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -6158,7 +6160,7 @@ MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `cidades`
 --
 ALTER TABLE `cidades`
-MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6254;
+MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6256;
 --
 -- AUTO_INCREMENT for table `contatos`
 --
@@ -6188,7 +6190,7 @@ MODIFY `codMatricula` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `niveisuser`
 --
 ALTER TABLE `niveisuser`
-MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `pastorais`
 --
@@ -6218,7 +6220,7 @@ MODIFY `codTipoPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9
 -- AUTO_INCREMENT for table `tipoutilitario`
 --
 ALTER TABLE `tipoutilitario`
-MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `turmas`
 --
@@ -6228,12 +6230,12 @@ MODIFY `codTurma` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `uf`
 --
 ALTER TABLE `uf`
-MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `utilitarios`
 --
