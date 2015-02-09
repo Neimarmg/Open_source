@@ -17,7 +17,16 @@ class utilitario {
 	public static function contatena($valor){
 		return  $valor;
 	}
+	
+	public static  function getPostAction($name){
+		$params = func_get_args();
+	
+		foreach ($params as $name) {
+			if (isset($_POST[$name])) {
+				return $name;
+			}
+		}
+	}
 }
-
 
 ?>
