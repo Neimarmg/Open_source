@@ -70,12 +70,7 @@
 					<input class="button" type="image" src="../imagens/editar.jpg" alt="Imagem não pode ser carregada" name="editar" id="cUsuarios"/>	
 					<input class="button" type="image" src="../imagens/excluir.jpg" alt="Imagem não pode ser carregada" name="apagar" id="cUsuarios"/>	
 					<input class="button" type="image" src="../imagens/salvar.jpg" alt="Imagem não pode ser carregada" name="salvar" id="cUsuarios"/>	
-				
-				
-				<Form action = método "handle_user.php" = "POST />
-  <Input type = "submit" value = "Salvar" name = "salvar" />
-  <Input type = "submit" value = "Enviar para aprovação" name = "aprovar">
-</ Form>
+			
 				</form>
 			</fieldset>			
 		</section>	
