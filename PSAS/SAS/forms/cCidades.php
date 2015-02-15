@@ -70,29 +70,26 @@
 		validadaDados::ValidaCampo($nome = $_POST['nome']);
 		validadaDados::ValidaCampo($codUf = $_POST['codUf']);
 
-			
+		/*Variavel contatenação de string para parametro de sql*/
+		$filtro = utilitario::contatena($nome.$codUf);
+		
 		/*Validação de campos obrigatórios não prenchidos*/
 		if (validadaDados::$Contador > 0) {
 			validadaDados::aletaNaoPrechimento(true);
 		
 		}else{			
+
 			/*Controle de duplicação de registros*/
-			$query =  mysql_num_rows(mysql_query("SELECT *FROM `cidades` WHERE `nome` = '$nome'"));
-			
-			if ($query == 0) {
-			
+			if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT *FROM `cidades` LEFT JOIN UF ON cidades.`codUf`= uf.codUf WHERE CONCAT(cidades.nome,cidades.`codUf`) = '$filtro'"))) == 0) {
+
 				@mysql_query("INSERT INTO `cidades`(`codCidade`, `codUf`, `nome`) VALUES (NULL,'$codUf','$nome')");
 			
 				/*Confirmação de inserção de registro*/
-				$query = mysql_num_fields(mysql_query("SELECT *FROM `cidades` WHERE `nome` = '$nome'"));
-					
-				if ($query = 1) {
+				if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT *FROM `cidades` LEFT JOIN UF ON cidades.`codUf`= uf.codUf WHERE CONCAT(cidades.nome,cidades.`codUf`) = '$filtro'"))) == 1) {
 					validadaDados::registradoComSucesso(true);
-				
 				}else{
 					validadaDados::registroNaoInserido(true);
 				}
-
 			}else{
 				validadaDados::registroExitente(true);
 			}

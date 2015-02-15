@@ -28,6 +28,7 @@
 					action="?go=salvar"
 				>
 					
+					
 					<br/> <br/> 
 					
 					<label for="usuario">Usuário:</label> 
@@ -99,16 +100,12 @@
 		
 		}else{			
 			/*Controle de duplicação de registros*/
-			$query =  mysql_num_rows(mysql_query("SELECT * FROM `usuarios` WHERE concat(`usuario`,`codNivel`) = '$filtro'"));
-			
-			if ($query == 0) {
-			
+			if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT * FROM `usuarios` WHERE concat(`usuario`,`codNivel`) = '$filtro'"))) == 0) {
+				
 				@mysql_query("INSERT INTO `usuarios`(`codUsuario`, `codPessoa`, `codNivel`, `usuario`) VALUES (NULL,'$codPessoa','$codNivel','$usuario')");
 			
 				/*Confirmação de inserção de registro*/
-				$query = mysql_num_fields(mysql_query("SELECT * FROM `usuarios` WHERE concat(`usuario`,`codNivel`) = '$filtro'"));
-					
-				if ($query = 1) {
+				if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT * FROM `usuarios` WHERE concat(`usuario`,`codNivel`) = '$filtro'"))) == 1) {
 					validadaDados::registradoComSucesso(true);
 				
 				}else{
@@ -118,7 +115,7 @@
 			}else{
 				validadaDados::registroExitente(true);
 			}
-		}
-		
-	}	
+		}	
+	}
+	
 ?>

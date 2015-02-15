@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Fev-2015 às 18:38
+-- Generation Time: 15-Fev-2015 às 01:17
 -- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   `ativa` varchar(1) DEFAULT NULL COMMENT 'A= Ativo, I = Inativo',
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -59,9 +59,9 @@ CREATE TABLE IF NOT EXISTS `cidades` (
   `nome` varchar(200) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6256 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6288 ;
 
 --
 -- Extraindo dados da tabela `cidades`
@@ -5222,7 +5222,7 @@ CREATE TABLE IF NOT EXISTS `contatos` (
   `obs` text,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL ,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5237,7 +5237,7 @@ CREATE TABLE IF NOT EXISTS `cursos` (
   `nome` varchar(100) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL ,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5260,7 +5260,7 @@ CREATE TABLE IF NOT EXISTS `enderecos` (
   `cep` varchar(11) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5278,7 +5278,7 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
   `nomeFantasia` varchar(150) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5292,7 +5292,7 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
 `codMatricula` int(10) unsigned NOT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5307,9 +5307,9 @@ CREATE TABLE IF NOT EXISTS `niveisuser` (
   `descricao` varchar(30) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Extraindo dados da tabela `niveisuser`
@@ -5335,9 +5335,9 @@ CREATE TABLE IF NOT EXISTS `pastorais` (
   `nome` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Extraindo dados da tabela `pastorais`
@@ -5359,7 +5359,9 @@ INSERT INTO `pastorais` (`codPastoral`, `codProprietario`, `nome`, `datacreate`,
 (13, 1, 'PASTORAL DOS SURDOS', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
 (14, 1, 'PASTORAL LITÚRGICA', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
 (15, 1, 'SERVIÇO DOS GUARDIÃES', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
-(16, 1, 'SINGULARES COM CRISTO', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER');
+(16, 1, 'SINGULARES COM CRISTO', '2015-01-17 15:44:12', 'MASTER', '2015-01-17 15:44:12', 'MASTER'),
+(17, 1, 'AÇÃO SOLIDÁRIA', '2015-02-10 19:21:38', 'MASTER', '2015-02-10 19:21:38', 'MASTER'),
+(18, 1, 'APOSTOLADO DA ORAÇÃO ', '2015-02-10 19:22:25', 'MASTER', '2015-02-10 19:22:25', 'MASTER');
 
 -- --------------------------------------------------------
 
@@ -5377,7 +5379,7 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
   `ativo` tinyint(1) NOT NULL DEFAULT '-1',
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -5406,7 +5408,7 @@ CREATE TABLE IF NOT EXISTS `proprietario` (
   `cep` varchar(11) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -5428,7 +5430,7 @@ CREATE TABLE IF NOT EXISTS `tipofornecedor` (
   `descricao` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5443,7 +5445,7 @@ CREATE TABLE IF NOT EXISTS `tipopessoa` (
   `descricao` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT NULL,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
@@ -5472,9 +5474,9 @@ CREATE TABLE IF NOT EXISTS `tipoutilitario` (
   `descricao` varchar(60) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `tipoutilitario`
@@ -5496,7 +5498,7 @@ CREATE TABLE IF NOT EXISTS `turmas` (
 `codTurma` int(10) unsigned NOT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5513,9 +5515,9 @@ CREATE TABLE IF NOT EXISTS `uf` (
   `pais` varchar(50) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Extraindo dados da tabela `uf`
@@ -5561,9 +5563,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `usuario` varchar(25) DEFAULT NULL,
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Extraindo dados da tabela `usuarios`
@@ -5587,9 +5589,9 @@ CREATE TABLE IF NOT EXISTS `utilitarios` (
   `favorito` tinyint(1) NOT NULL DEFAULT '-1' COMMENT 'Marcação opcional para personalizar as listas com as opções mais usadas',
   `datacreate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userCreate` varchar(30) DEFAULT 'MASTER',
-  `dataAlter` timestamp NULL,
+  `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1113 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1112 ;
 
 --
 -- Extraindo dados da tabela `utilitarios`
@@ -6160,7 +6162,7 @@ MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `cidades`
 --
 ALTER TABLE `cidades`
-MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6256;
+MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6288;
 --
 -- AUTO_INCREMENT for table `contatos`
 --
@@ -6190,12 +6192,12 @@ MODIFY `codMatricula` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `niveisuser`
 --
 ALTER TABLE `niveisuser`
-MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `codNiveisUser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `pastorais`
 --
 ALTER TABLE `pastorais`
-MODIFY `codPastoral` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+MODIFY `codPastoral` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `pessoas`
 --
@@ -6220,7 +6222,7 @@ MODIFY `codTipoPessoa` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9
 -- AUTO_INCREMENT for table `tipoutilitario`
 --
 ALTER TABLE `tipoutilitario`
-MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `codTipoUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `turmas`
 --
@@ -6230,17 +6232,17 @@ MODIFY `codTurma` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `uf`
 --
 ALTER TABLE `uf`
-MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `utilitarios`
 --
 ALTER TABLE `utilitarios`
-MODIFY `codUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1113;
+MODIFY `codUtilitario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1112;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
