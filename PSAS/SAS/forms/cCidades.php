@@ -4,6 +4,7 @@
 ?>
 
 <html>
+
 <head>
 	<title>Cadastro de cidades</title>
 	<meta charset="ISO-8859-1">
