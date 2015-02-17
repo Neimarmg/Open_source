@@ -70,16 +70,12 @@
 		}else{			
 			
 			/*Controle de duplicação de registros*/
-			$query = mysql_num_rows(mysql_query("SELECT  concat(`uf`,`pais`) FROM `uf` WHERE concat(`uf`,`pais`) = '$filtro'"));	
-			
-			if ($query == 0) {
+			if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT *FROM `uf` WHERE concat(`uf`,`pais`) = '$filtro'"))) == 0) {
 			
 				@mysql_query("INSERT INTO `uf`(`codUf`, `uf`, `estado`, `pais`) VALUES (NULL, '$uf','$estado' ,'$pais')");
 			
 				/*Confirmação de inserção de registro*/
-				$query = mysql_num_fields(mysql_query("SELECT  concat(`uf`,`pais`) FROM `uf` WHERE concat(`uf`,`pais`) = '$filtro'"));
-					
-				if ($query = 1) {
+				if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT *FROM `uf` WHERE concat(`uf`,`pais`) = '$filtro'"))) == 1) {
 					validadaDados::registradoComSucesso(true);
 				
 				}else{

@@ -88,6 +88,7 @@
 				/*Confirmação de inserção de registro*/
 				if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT *FROM `cidades` LEFT JOIN UF ON cidades.`codUf`= uf.codUf WHERE CONCAT(cidades.nome,cidades.`codUf`) = '$filtro'"))) == 1) {
 					validadaDados::registradoComSucesso(true);
+				
 				}else{
 					validadaDados::registroNaoInserido(true);
 				}

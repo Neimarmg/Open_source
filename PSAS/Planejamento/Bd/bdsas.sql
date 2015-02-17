@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Fev-2015 às 01:17
+-- Generation Time: 17-Fev-2015 às 23:03
 -- Versão do servidor: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cidades` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6288 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6254 ;
 
 --
 -- Extraindo dados da tabela `cidades`
@@ -5565,7 +5565,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `userCreate` varchar(30) DEFAULT 'MASTER',
   `dataAlter` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `userAlter` varchar(30) DEFAULT 'MASTER'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Extraindo dados da tabela `usuarios`
@@ -6162,7 +6162,7 @@ MODIFY `codAcesso` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `cidades`
 --
 ALTER TABLE `cidades`
-MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6288;
+MODIFY `codCidade` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6254;
 --
 -- AUTO_INCREMENT for table `contatos`
 --
@@ -6237,7 +6237,7 @@ MODIFY `codUf` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+MODIFY `codUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `utilitarios`
 --

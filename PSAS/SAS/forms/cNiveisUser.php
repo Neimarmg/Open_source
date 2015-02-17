@@ -53,19 +53,17 @@
 
 	if (@$_GET['go'] == 'Novo'){
 		
-		$nome = $_POST['nome'];
-		
-		$query = mysql_num_rows(mysql_query("SELECT * FROM `niveisuser` WHERE `descricao` ='$nome'"));
+		$nome = $_POST['nome'];		
 		
 		/*Validação de campos obrigatórios não prenchidos*/
-		if ($query == $nome) {
+		if (validadaDados::resultQuery( mysql_num_rows(mysql_query("SELECT * FROM `niveisuser` WHERE `descricao` ='$nome'"))) == $nome) {
 		
 			@mysql_query("INSERT INTO `niveisuser`(`codNiveisUser`, `descricao`) VALUES (NULL,'$nome')");
 
 			/*Confirmação de inserção de registro*/
-			$query = mysql_num_rows(mysql_query("SELECT * FROM `niveisuser` WHERE `descricao` ='$nome'"));
+			//$query = mysql_num_rows(mysql_query("SELECT * FROM `niveisuser` WHERE `descricao` ='$nome'"));
 
-			if ($query = 1) {	
+			if (validadaDados::resultQuery(mysql_num_rows(mysql_query("SELECT * FROM `niveisuser` WHERE `descricao` ='$nome'"))) == 1) {	
 				validadaDados::registradoComSucesso(true);
 			}else{ 
 				validadaDados::registroNaoInserido(true);
