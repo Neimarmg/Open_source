@@ -14,8 +14,7 @@
 </head>
 
 <body>
-	<main>
-	
+	<main>	
 		<section >
 			<fieldset>		
 				<form action="autenticar.php" method="post">
