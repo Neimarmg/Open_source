@@ -3,6 +3,5 @@ Pasta geral de formulários
 C = Cadastro 
 	Este caracter será inserido por default na frente dos formulários de cadastratro
 	
-
 E = Eduacacional
 	Este caracter será inserido por default Formuários de execução de atividades educacionais.
