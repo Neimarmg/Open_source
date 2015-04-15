@@ -14,12 +14,12 @@ Os importers de estilos devem sempre obdecer esta ordem
 
 			
 =============================< Anotação de html >==============================================
-
-Anotação css id Ex: Input#login
-	Chamada no html id="login" isso dentro da tag
-		
-Anotação css class Ex: .nome (Pode ser qualquer nome)
-	Chamada no html class="login" isso dentro da tag
-
-Anotação css Ex: input (para tgs do hatml)
-	Chamada no html input (isso é o nome da propria tag)
+	
+	Anotação css id Ex: Input#login
+		Chamada no html id="login" isso dentro da tag
+			
+	Anotação css class Ex: .nome (Pode ser qualquer nome)
+		Chamada no html class="login" isso dentro da tag
+	
+	Anotação css Ex: input (para tgs do hatml)
+		Chamada no html input (isso é o nome da propria tag)
