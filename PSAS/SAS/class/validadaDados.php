@@ -1,5 +1,6 @@
 <meta charset="ISO-8859-1">
 <?php
+
 class validadaDados {
 	
 	public static $Contador = 0;	
