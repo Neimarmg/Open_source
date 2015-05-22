@@ -10,7 +10,7 @@ Os importers de estilos devem sempre obdecer esta ordem
 		<style type="text/css"> @import "../css/global/fontes.css" </style>
 			
 	3ª) ???.css este é onde deve ser criada toda a personalização especifica de cada pagina 
-			<style type="text/css"> @import "../css/???.css" </style>
+			<style type="text/css"> @import "../css/???.css" </style >
 
 			
 =============================< Anotação de html >==============================================
