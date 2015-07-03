@@ -17,13 +17,12 @@ main {
 section {
 	width:60%;
 	height:40px; 
-
 }
 
 label{
 	margin:10% 20% 20% 0%;
 	Width:5%;
-	height:100px;
+	height:50px;
 }
 
 .labelAtivo{
@@ -33,9 +32,26 @@ label{
 	height:2px;
 }
 
+.labelComboBox{
+	margin:10% 20% 20% 0%;
+	Width:5%;
+	height:20px;
+}
+
+fieldset{
+	
+}
+
 input{	
 	margin:0% 0% 0% 0%;
-	Width:98%;
+	Width:50%;
+	height:38px;
+}
+
+
+.inputComboBox{	
+	margin:0% 0% 0% 0%;
+	Width:40%;
 	height:38px;
 }
 

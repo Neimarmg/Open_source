@@ -27,18 +27,16 @@
 					action="?go=salvar"
 				>
 					
-				<br/> <br/> 
+				<br/> 
 				<fieldset>
 					<legend>Dados pessois</legend>
-					
 					<br/>						
+
+					<label class="labelComboBox"  for="Nome">Nome pessoa:</label> <br/>	
+					<input class="inputComboBox" name="nome" id="nome" type="text" required/> <br/>
 					
-					<label for="Nome">Nome pessoa:</label> 
-					<input  name="nome" id="nome" type="text" required/> 
-					
-					<br/> <br/> 
-					<label for="">Tipo Pessoa:</label> 
-					<select name="codTipoPessoa" id="codTipoPessoa" type="text" required>
+					<label class="labelComboBox"  for="">Tipo Pessoa:</label><br/>	 
+					<select class="inputComboBox" name="codTipoPessoa" id="codTipoPessoa" type="text" required>
 						<option value="0">...</option>
 						<?php 						
 							$sql = "SELECT `codTipoPessoa`,`descricao` 
@@ -50,10 +48,10 @@
 							}
 						?>
 					</select>
-					<br/> <br/> 
+					<br/> 
 					
-					<label for="">Profissão:</label> 
-					<select name="codProfissao" id="codProfissao" type="text" required>
+					<label class="labelComboBox"  for="">Profissão:</label> <br/>	
+					<select class="inputComboBox" name="codProfissao" id="codProfissao" type="text" required>
 						<option value="0">...</option>
 						<?php 						
 							$sql = "SELECT `codUtilitario`,`descricao` 
@@ -67,11 +65,34 @@
 						?>
 					</select>			
 					
+					<br/>
+										
+					<label class="labelAtivo" for="ativo">Ativo:</label>
+					<input class="inputAtivo" type="checkbox" name="ativo" id="ativo" value="-1" />
+	
+				</fieldset>
+				
+				<fieldset>
+					<legend>Endereços</legend>
+										
+					<label class="inputEndereco for="Rua">Rua:</label> <br/>
+					<input class="inputComboBox" name="nome" id="rua" type="text" required/>
+					<br/>
 					
-					<br/><br/>
+					<label class="inputEndereco for="nro">Nro:</label> <br/>
+					<input class="inputComboBox name="nome" id="nro" type="text" required/>  
+					<br/>
 					
-					<label for="">cidade:</label> 
-					<select name="codCidade" id="codCidade" type="text" required>
+					<label class="inputEndereco for="Compl">Compl:</label> <br/>
+					<input class="inputComboBox" name="nome" id="Compl" type="text" required/>
+					<br/>
+					
+					<label class="inputEndereco for="Bairo">Bairro:</label> <br/>
+					<input class="inputComboBox name="nome" id="Bairro" type="text" required/>
+					<br/>
+										
+					<label class="labelComboBox" for="">cidade:</label> <br/>
+					<select class="inputComboBox" class="inputCidade" name="codCidade" id="codCidade" type="text" required>
 						<option value="0">...</option>
 						<?php 						
 							$sql = "SELECT codCidade ,NOME ,UF
@@ -84,22 +105,17 @@
 								echo "<option value=".$fila['0'].">".$fila['1']." - ".$fila['2']."</option>";
 							}
 						?>
-					</select>
+					</select> <br/>
 					
-					<br/><br/>
-					
-					<label class="labelAtivo" for="ativo">Ativo:</label>
-					<input class="inputAtivo" type="checkbox" name="ativo" id="ativo" value="-1" />
-	
-				</fieldset>
-				
-				<fieldset>
-					<legend>Endereços</legend>
+					<label class="inputEndereco for="cep">Cep:</label> <br/>
+					<input class="inputComboBox name="nome" id="Cep" type="text" required/>
+					<br/>
 				</fieldset>
 				
 				<fieldset>
 					<legend>Contatos</legend>
 				</fieldset>
+	
 				
 				
 				<br/> 
