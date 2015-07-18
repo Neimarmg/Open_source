@@ -116,8 +116,7 @@
 					<legend>Contatos</legend>
 					
 				</fieldset>
-	
-								
+									
 				<br/> 
 				<input class="button" type="image" src="../imagens/novo.jpg" alt="Imagem não pode ser carregada" name="novo" id="cPessoas"/>	
 				<input class="button" type="image" src="../imagens/editar.jpg" alt="Imagem não pode ser carregada" name="editar" id="cPessoas"/>	
